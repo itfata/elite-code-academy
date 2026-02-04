@@ -6,9 +6,8 @@
     <title>Elite Code Academy | Твій шлях в IT</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="ECA.png" type="image/png">
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17824431691">
-</script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17824431691"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -16,13 +15,10 @@
 
   gtag('config', 'AW-17824431691');
 </script>
-    <!-- Event snippet for Підписка conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-17824431691/UD15CJ-kw-gbEMv8rLNC'});
-</script>
-
     
     <style>
+        html { scroll-behavior: smooth; }
+
         .lang-switch {
     position: fixed;
     top: 20px;
@@ -71,6 +67,55 @@
         }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .scroll-target { scroll-margin-top: 90px; }
+
+        /* --- Top Nav (Челка) --- */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.75);
+            border-bottom: 1px solid var(--border);
+        }
+        .top-nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .brand-mini {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-bright);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-bright);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 999px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+        .nav-links a:hover {
+            color: #000;
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(0, 255, 238, 0.5);
+        }
 
         /* --- Header --- */
         .main-header { text-align: center; padding: 60px 0 30px; }
@@ -250,6 +295,27 @@
         }
         .story-author { color: var(--accent); font-weight: 600; display: block; margin-top: 15px; }
 
+        /* --- Student Works --- */
+        .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 50px 0; }
+        .work-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 20px;
+        }
+        .work-video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: #0b0b0b;
+        }
+        .work-caption {
+            margin-top: 12px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
         /* --- Footer --- */
         .main-footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); }
         .social-links { display: flex; justify-content: center; gap: 25px; margin-top: 25px; }
@@ -272,6 +338,11 @@
         .fade-in { opacity:0; transform:translateY(30px); transition: 0.8s all ease-out; }
         .fade-in.visible { opacity:1; transform:translateY(0); }
 
+        @media (max-width: 900px) {
+            .top-nav-inner { flex-direction: column; }
+            .nav-links { justify-content: center; }
+        }
+
         @media (max-width: 850px) {
             .mentor-section { flex-direction: column; text-align: center; }
             .course-title { font-size: 2.2rem; }
@@ -285,6 +356,19 @@
         <button class="lang-btn" id="btn-en" onclick="setLang('en')">ENG</button>
     </div>
 
+    <nav class="top-nav">
+        <div class="top-nav-inner">
+            <div class="brand-mini">Elite Code Academy</div>
+            <div class="nav-links">
+                <a href="#about" data-key="nav_about">Про мене</a>
+                <a href="#courses" data-key="nav_courses">Курси</a>
+                <a href="#faq" data-key="nav_faq">FAQ</a>
+                <a href="#reviews" data-key="nav_reviews">Відгуки</a>
+                <a href="#works" data-key="nav_works">Роботи учнів</a>
+            </div>
+        </div>
+    </nav>
+
 <div class="container">
     <header class="main-header fade-in">
         <img src="ECA.jpeg" alt="Elite Code Academy" class="logo">
@@ -292,7 +376,7 @@
         <p class="subtitle" data-key="subtitle">Ваш впевнений старт в IT без страху перед математикою</p>
     </header>
 
-    <section class="mentor-section fade-in">
+    <section class="mentor-section fade-in scroll-target" id="about">
         <div class="mentor-image-wrapper">
             <img src="Katya.jpeg" alt="Катерина - Ментор" class="mentor-image">
         </div>
@@ -304,172 +388,174 @@
         </div>
     </section>
 
-    <section class="course-block fade-in" id="python">
-        <div class="course-header">
-            <span class="course-tag" data-key="tag_popular">Найпопулярніший курс</span>
-            <h2 class="course-title" data-key="py_title">Python Основи</h2>
-            <p data-key="py_desc">Почни програмувати на найпопулярнішій мові світу</p>
-        </div>
+    <section id="courses" class="scroll-target">
+        <section class="course-block fade-in" id="python">
+            <div class="course-header">
+                <span class="course-tag" data-key="tag_popular">Найпопулярніший курс</span>
+                <h2 class="course-title" data-key="py_title">Python Основи</h2>
+                <p data-key="py_desc">Почни програмувати на найпопулярнішій мові світу</p>
+            </div>
 
-        <div class="modules-container">
-            <div class="module-item">
-                <div class="module-number">01</div>
-                <div class="module-info">
-                    <h4 data-key="m1_h"> Перші кроки</h4>
-                    <p data-key="m1_p">Встановлення Python та знайомство з редакторами коду VS Code та PyCharm.</p>
+            <div class="modules-container">
+                <div class="module-item">
+                    <div class="module-number">01</div>
+                    <div class="module-info">
+                        <h4 data-key="m1_h"> Перші кроки</h4>
+                        <p data-key="m1_p">Встановлення Python та знайомство з редакторами коду VS Code та PyCharm.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">02</div>
+                    <div class="module-info">
+                        <h4 data-key="m2_h">Основи логіки</h4>
+                        <p data-key="m2_p">Арифметичні операції, змінні та робота з типами даних.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">03</div>
+                    <div class="module-info">
+                        <h4 data-key="m3_h">Умови та Цикли</h4>
+                        <p data-key="m3_p">Як навчити програму приймати рішення (If/Else) та повторювати дії (For/While).</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">04</div>
+                    <div class="module-info">
+                        <h4 data-key="m4_h">Списки та Словники</h4>
+                        <p data-key="m4_p">Організація великої кількості даних та швидкий пошук по них.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">05</div>
+                    <div class="module-info">
+                        <h4 data-key="m5_h">Функції та Модулі</h4>
+                        <p data-key="m5_p">Пишемо професійний код, який можна використовувати повторно.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">06</div>
+                    <div class="module-info">
+                        <h4 data-key="m6_h">Фінальний проект</h4>
+                        <p data-key="m6_p">Створення власної міні-гри: від ідеї до робочого файлу.</p>
+                    </div>
                 </div>
             </div>
-            <div class="module-item">
-                <div class="module-number">02</div>
-                <div class="module-info">
-                    <h4 data-key="m2_h">Основи логіки</h4>
-                    <p data-key="m2_p">Арифметичні операції, змінні та робота з типами даних.</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">03</div>
-                <div class="module-info">
-                    <h4 data-key="m3_h">Умови та Цикли</h4>
-                    <p data-key="m3_p">Як навчити програму приймати рішення (If/Else) та повторювати дії (For/While).</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">04</div>
-                <div class="module-info">
-                    <h4 data-key="m4_h">Списки та Словники</h4>
-                    <p data-key="m4_p">Організація великої кількості даних та швидкий пошук по них.</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">05</div>
-                <div class="module-info">
-                    <h4 data-key="m5_h">Функції та Модулі</h4>
-                    <p data-key="m5_p">Пишемо професійний код, який можна використовувати повторно.</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">06</div>
-                <div class="module-info">
-                    <h4 data-key="m6_h">Фінальний проект</h4>
-                    <p data-key="m6_p">Створення власної міні-гри: від ідеї до робочого файлу.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="certificate-info">
-            <div style="font-size: 2.5rem;">🎓</div>
-            <div>
-                <h4 style="color: #fff; margin-bottom: 5px;" data-key="cert_h">Сертифікат про навчання</h4>
-                <p data-key="cert_p">По завершенню ти отримаєш іменний сертифікат, що підтверджує твої знання.</p>
+            <div class="certificate-info">
+                <div style="font-size: 2.5rem;">🎓</div>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 5px;" data-key="cert_h">Сертифікат про навчання</h4>
+                    <p data-key="cert_p">По завершенню ти отримаєш іменний сертифікат, що підтверджує твої знання.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="price-grid">
-            <div class="price-card">
-                <h3 data-key="t_self">Self-Study</h3>
-                <div class="current-price" data-key="price_py_self">1800 грн</div>
-                 <!--<div class="old-price">1800 грн</div>-->
-                <ul class="price-features">
-                    <li data-key="f_mod23">23 модулі</li>
-                    <li data-key="f_check">Детальна перевірка домашніх завдань</li>
-                    <li data-key="f_cert">Сертифікат</li>
-                    <li data-key="f_access">6 місяців доступу до курсу</li>
-                </ul>
-                <button class="buy-button" data-key="btn_buy">Записатися</button>
+            <div class="price-grid">
+                <div class="price-card">
+                    <h3 data-key="t_self">Self-Study</h3>
+                    <div class="current-price" data-key="price_py_self">1800 грн</div>
+                     <!--<div class="old-price">1800 грн</div>-->
+                    <ul class="price-features">
+                        <li data-key="f_mod23">23 модулі</li>
+                        <li data-key="f_check">Детальна перевірка домашніх завдань</li>
+                        <li data-key="f_cert">Сертифікат</li>
+                        <li data-key="f_access">6 місяців доступу до курсу</li>
+                    </ul>
+                    <button class="buy-button" data-key="btn_buy">Записатися</button>
+                </div>
+                <div class="price-card popular">
+                    <h3 data-key="t_full">Full Support</h3>
+                    <div class="current-price" data-key="price_py_full">3500 грн</div>
+                    <!--<div class="old-price">3500 грн</div>-->
+                    <ul class="price-features">
+                        <li data-key="f_mod23">23 модулі</li>
+                        <li data-key="f_online">Плановані онлайн-зустрічі</li>
+                        <li data-key="f_check">Детальна перевірка домашніх завдань</li>
+                        <li data-key="f_help_proj">Допомога з фінальним проектом</li>
+                        <li data-key="f_cert">Сертифікат</li>
+                        <li data-key="f_access">6 місяців доступу до курсу</li>
+                    </ul>
+                    <button class="buy-button" data-key="btn_buy">Записатися</button>
+                </div>
             </div>
-            <div class="price-card popular">
-                <h3 data-key="t_full">Full Support</h3>
-                <div class="current-price" data-key="price_py_full">3500 грн</div>
-                <!--<div class="old-price">3500 грн</div>-->
-                <ul class="price-features">
-                    <li data-key="f_mod23">23 модулі</li>
-                    <li data-key="f_online">Плановані онлайн-зустрічі</li>
-                    <li data-key="f_check">Детальна перевірка домашніх завдань</li>
-                    <li data-key="f_help_proj">Допомога з фінальним проектом</li>
-                    <li data-key="f_cert">Сертифікат</li>
-                    <li data-key="f_access">6 місяців доступу до курсу</li>
-                </ul>
-                <button class="buy-button" data-key="btn_buy">Записатися</button>
+        </section>
+
+        <section class="course-block fade-in" id="html-css">
+            <div class="course-header">
+                <span class="course-tag" data-key="tag_site">Твій перший сайт</span>
+                <h2 class="course-title" data-key="html_title">HTML/CSS Основи</h2>
+                <p data-key="html_desc">Навчися створювати інтерфейси, які приносять гроші</p>
             </div>
-        </div>
+
+            <div class="modules-container">
+                <div class="module-item">
+                    <div class="module-number">01</div>
+                    <div class="module-info">
+                        <h4 data-key="h1_h">Анатомія сайту</h4>
+                        <p data-key="h1_p">Структура HTML, робота з текстом, посиланнями та зображеннями.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">02</div>
+                    <div class="module-info">
+                        <h4 data-key="h2_h">Магія стилів CSS</h4>
+                        <p data-key="h2_p">Селектори, кольори, шрифти та оформлення блоків.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">03</div>
+                    <div class="module-info">
+                        <h4 data-key="h3_h">Flexbox Layout</h4>
+                        <p data-key="h3_p">Сучасна побудова сіток та розташування елементів на сторінці.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">04</div>
+                    <div class="module-info">
+                        <h4 data-key="h4_h">Форми та Інтерактив</h4>
+                        <p data-key="h4_p">Створення полів вводу, кнопок та збір даних від користувачів.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">05</div>
+                    <div class="module-info">
+                        <h4 data-key="h5_h">Фінальний проект</h4>
+                        <p data-key="h5_p">Верстка твого першого професійного адаптивного сайту.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-grid">
+                <div class="price-card">
+                    <h3 data-key="t_basic">Basic</h3>
+                    <div class="current-price" data-key="price_html_basic">1300 грн</div>
+                    <!--<div class="old-price">1300 грн</div>-->
+                    <ul class="price-features">
+                        <li data-key="f_mod15">15 модулів</li>
+                        <li data-key="f_video">Відеолекції та конспекти</li>
+                        <li data-key="f_self_study">Навчання самостійно</li>
+                        <li data-key="f_cert">Сертифікат</li>
+                        <li data-key="f_access">6 місяців доступу до курсу</li>
+                    </ul>
+                    <button class="buy-button" data-key="btn_buy">Записатися</button>
+                </div>
+                <div class="price-card popular">
+                    <h3 data-key="t_pro">Pro Support</h3>
+                    <div class="current-price" data-key="price_html_pro">2900 грн</div>
+                     <!--<div class="old-price">2900 грн</div>-->
+                    <ul class="price-features">
+                        <li data-key="f_mod15">15 модулів</li>
+                        <li data-key="f_online">Заплановані онлайн-зустрічі</li>
+                        <li data-key="f_review">Розбір твого коду ментором</li>
+                        <li data-key="f_cert">Сертифікат</li>
+                        <li data-key="f_access">6 місяців доступу до курсу</li>
+                    </ul>
+                    <button class="buy-button" data-key="btn_buy">Записатися</button>
+                </div>
+            </div>
+        </section>
     </section>
 
-    <section class="course-block fade-in" id="html-css">
-        <div class="course-header">
-            <span class="course-tag" data-key="tag_site">Твій перший сайт</span>
-            <h2 class="course-title" data-key="html_title">HTML/CSS Основи</h2>
-            <p data-key="html_desc">Навчися створювати інтерфейси, які приносять гроші</p>
-        </div>
-
-        <div class="modules-container">
-            <div class="module-item">
-                <div class="module-number">01</div>
-                <div class="module-info">
-                    <h4 data-key="h1_h">Анатомія сайту</h4>
-                    <p data-key="h1_p">Структура HTML, робота з текстом, посиланнями та зображеннями.</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">02</div>
-                <div class="module-info">
-                    <h4 data-key="h2_h">Магія стилів CSS</h4>
-                    <p data-key="h2_p">Селектори, кольори, шрифти та оформлення блоків.</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">03</div>
-                <div class="module-info">
-                    <h4 data-key="h3_h">Flexbox Layout</h4>
-                    <p data-key="h3_p">Сучасна побудова сіток та розташування елементів на сторінці.</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">04</div>
-                <div class="module-info">
-                    <h4 data-key="h4_h">Форми та Інтерактив</h4>
-                    <p data-key="h4_p">Створення полів вводу, кнопок та збір даних від користувачів.</p>
-                </div>
-            </div>
-            <div class="module-item">
-                <div class="module-number">05</div>
-                <div class="module-info">
-                    <h4 data-key="h5_h">Фінальний проект</h4>
-                    <p data-key="h5_p">Верстка твого першого професійного адаптивного сайту.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="price-grid">
-            <div class="price-card">
-                <h3 data-key="t_basic">Basic</h3>
-                <div class="current-price" data-key="price_html_basic">1300 грн</div>
-                <!--<div class="old-price">1300 грн</div>-->
-                <ul class="price-features">
-                    <li data-key="f_mod15">15 модулів</li>
-                    <li data-key="f_video">Відеолекції та конспекти</li>
-                    <li data-key="f_self_study">Навчання самостійно</li>
-                    <li data-key="f_cert">Сертифікат</li>
-                    <li data-key="f_access">6 місяців доступу до курсу</li>
-                </ul>
-                <button class="buy-button" data-key="btn_buy">Записатися</button>
-            </div>
-            <div class="price-card popular">
-                <h3 data-key="t_pro">Pro Support</h3>
-                <div class="current-price" data-key="price_html_pro">2900 грн</div>
-                 <!--<div class="old-price">2900 грн</div>-->
-                <ul class="price-features">
-                    <li data-key="f_mod15">15 модулів</li>
-                    <li data-key="f_online">Заплановані онлайн-зустрічі</li>
-                    <li data-key="f_review">Розбір твого коду ментором</li>
-                    <li data-key="f_cert">Сертифікат</li>
-                    <li data-key="f_access">6 місяців доступу до курсу</li>
-                </ul>
-                <button class="buy-button" data-key="btn_buy">Записатися</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="fade-in" style="padding: 60px 0;">
+    <section class="fade-in scroll-target" style="padding: 60px 0;" id="reviews">
         <h2 style="text-align: center; font-family: 'Montserrat'; font-size: 2.2rem; color: #fff;" data-key="stories_h">Історії успіху</h2>
         <div class="stories-grid">
             <div class="story-card">
@@ -494,7 +580,8 @@
             </div>
         </div>
     </section>
-<section class="course-block fade-in" id="faq">
+
+<section class="course-block fade-in scroll-target" id="faq">
         <div class="course-header">
             <span class="course-tag">FAQ</span>
             <h2 class="course-title" data-key="faq_title">Часті питання</h2>
@@ -580,6 +667,31 @@
     
         </div>
     </section>
+
+    <section class="fade-in scroll-target" style="padding: 60px 0;" id="works">
+        <h2 style="text-align: center; font-family: 'Montserrat'; font-size: 2.2rem; color: #fff;" data-key="works_h">Роботи учнів</h2>
+        <p style="text-align:center; margin-top:10px;" data-key="works_subtitle">Відео проєктів моїх учнів — натхнення для тебе</p>
+        <div class="works-grid">
+            <div class="work-card">
+                <video class="work-video" controls poster="">
+                    <source src="1.mp4" type="video/mp4">
+                </video>
+                <div class="work-caption" data-key="work_name1">Стас</div>
+            </div>
+            <div class="work-card">
+                <video class="work-video" controls poster="">
+                    <source src="2.mp4" type="video/mp4">
+                </video>
+                <div class="work-caption" data-key="work_name2">Олег</div>
+            </div>
+            <div class="work-card">
+                <video class="work-video" controls poster="">
+                    <source src="3.mp4" type="video/mp4">
+                </video>
+                <div class="work-caption" data-key="work_name3">Настя</div>
+            </div>
+        </div>
+    </section>
     
     <footer class="main-footer fade-in">
         <p data-key="footer_rights">&copy; 2026 Elite Code Academy. Усі права захищені.</p>
@@ -601,7 +713,6 @@
 </div>
 
 <script>
-    
     // Intersection Observer for fade-in
     const faders = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -627,11 +738,27 @@
         e.stopPropagation();
         showModal();
     }));
+
+    // Smooth nav scroll (fix for in-app webviews)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
 </script>
 <script>
     const langData = {
         uk: {
             subtitle: "Ваш впевнений старт в IT без страху перед математикою",
+            nav_about: "Про мене",
+            nav_courses: "Курси",
+            nav_faq: "FAQ",
+            nav_reviews: "Відгуки",
+            nav_works: "Роботи учнів",
             mentor_h: "Привіт, я Катерина!",
             mentor_p1: "Я ніколи не бачила себе в IT і навіть не дивилась в ту сторону. Коли мені було 17, я написала екзамен з математики на 0...",
             mentor_p2: "Жоден університет не хотів мене брати, бо в моїй голові була пустка замість формул. Але моє життя вирішило, що я буду вчитись на айтішника.",
@@ -685,11 +812,21 @@
             q6: "6) Чи можна навчатися з телефону?", a6: "Краще навчатися з ноутбука або ПК 💻 З телефону можна читати матеріали, але виконувати завдання зручніше на комп’ютері.",
             q7: "7) Якщо я застрягну — що робити?", a7: "Якщо ти обрав(ла) формат з підтримкою — ти завжди можеш написати мені, і я допоможу.",
             q8: "8) Як записатися на курс?", a8: "Натисни кнопку <b>“Записатися”</b> під курсом і обери Telegram або WhatsApp 🙂",
+            works_h: "Роботи учнів",
+            works_subtitle: "Відео проєктів моїх учнів — натхнення для тебе",
+            work_name1: "Стас",
+            work_name2: "Олег",
+            work_name3: "Настя",
             footer_rights: "© 2026 Elite Code Academy. Усі права захищені.",
             modal_h: "Оберіть месенджер", modal_close: "Закрити"
         },
         en: {
             subtitle: "Your confident start in IT without fear of mathematics",
+            nav_about: "About",
+            nav_courses: "Courses",
+            nav_faq: "FAQ",
+            nav_reviews: "Reviews",
+            nav_works: "Student Works",
             mentor_h: "Hi, I'm Kateryna!",
             mentor_p1: "I never saw myself in IT and didn't even look that way. When I was 17, I scored a 0 on my math exam...",
             mentor_p2: "No university wanted me because my head was empty of formulas. But life decided I would study IT anyway.",
@@ -743,6 +880,11 @@
             q6: "6) Can I study from a phone?", a6: "It's better to study from a laptop or PC 💻 You can read on a phone, but coding is better on a computer.",
             q7: "7) What if I get stuck?", a7: "If you chose the support format — you can always write to me, and I will help.",
             q8: "8) How to enroll?", a8: "Click the <b>“Enroll”</b> button under the course and choose Telegram or WhatsApp 🙂",
+            works_h: "Student Works",
+            works_subtitle: "Videos of student projects — inspiration for you",
+            work_name1: "Stas",
+            work_name2: "Oleg",
+            work_name3: "Nastya",
             footer_rights: "© 2026 Elite Code Academy. All rights reserved.",
             modal_h: "Choose a messenger", modal_close: "Close"
         }
