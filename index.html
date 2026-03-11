@@ -713,14 +713,10 @@
     </footer>
 </div>
 
-<div id="chatModal">
-    <div class="modal-content">
-        <h3 style="color:#fff; margin-bottom:20px; font-family:'Montserrat';" data-key="modal_h">Оберіть месенджер</h3>
-        <button onclick="openChat('telegram')" class="modal-btn" style="background:#0088cc;">Telegram</button>
-        <button onclick="openChat('whatsapp')" class="modal-btn" style="background:#25D366;">WhatsApp</button>
-        <p style="color:#888; margin-top:20px; cursor:pointer;" onclick="closeModal()" data-key="modal_close">Закрити</p>
-    </div>
+
 </div>
+
+>
 
 <script>
     // Intersection Observer for fade-in
@@ -734,20 +730,7 @@
     }, { threshold: 0.1 });
     faders.forEach(f => observer.observe(f));
 
-    // Modal logic
-    function showModal() { document.getElementById('chatModal').style.display = 'flex'; }
-    function closeModal() { document.getElementById('chatModal').style.display = 'none'; }
     
-    function openChat(platform) {
-        let url = platform === 'telegram' ? 'https://t.me/katyabrifli' : 'https://wa.me/40725245603';
-        window.open(url, '_blank');
-        closeModal();
-    }
-
-    document.querySelectorAll('.buy-button').forEach(btn => btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showModal();
-    }));
 
     // Smooth nav scroll (fix for in-app webviews)
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -828,9 +811,14 @@
             work_name1: "Стас",
             work_name2: "Олег",
             work_name3: "Настя",
-            work_name3: "Арсен",
+            work_name4: "Арсен",
             footer_rights: "© 2026 Elite Code Academy. Усі права захищені.",
-            modal_h: "Оберіть месенджер", modal_close: "Закрити"
+            modal_h: "Оберіть месенджер", modal_close: "Закрити",
+            modal_title: "Запис на курс",
+            modal_name: "Ім’я",
+            modal_phone: "Телефон",
+            modal_submit: "Відправити",
+            modal_alert: "Дякуємо! Твоя заявка прийнята, я скоро зв'яжуся з тобою.",
         },
         en: {
             subtitle: "Your confident start in IT without fear of mathematics",
@@ -900,7 +888,12 @@
             work_name3: "Nastya",
             work_name4: "Arsen",
             footer_rights: "© 2026 Elite Code Academy. All rights reserved.",
-            modal_h: "Choose a messenger", modal_close: "Close"
+            modal_h: "Choose a messenger", modal_close: "Close",
+            modal_title: "Course enrollment",
+            modal_name: "Name",
+            modal_phone: "Phone",
+            modal_submit: "Submit",
+            modal_alert: "Thanks! Your request has been received. I will contact you soon.",
         }
     };
 
@@ -910,6 +903,12 @@
             const key = el.getAttribute('data-key');
             if (langData[lang][key]) {
                 el.innerHTML = langData[lang][key];
+            }
+        });
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-key-placeholder');
+            if (langData[lang][key]) {
+                el.setAttribute('placeholder', langData[lang][key]);
             }
         });
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -930,17 +929,85 @@
         faders.forEach(f => observer.observe(f));
     };
 
-    function showModal() { document.getElementById('chatModal').style.display = 'flex'; }
-    function closeModal() { document.getElementById('chatModal').style.display = 'none'; }
-    function openChat(platform) {
-        let url = platform === 'telegram' ? 'https://t.me/katyabrifli' : 'https://wa.me/40725245603';
-        window.open(url, '_blank');
-        closeModal();
-    }
-    document.querySelectorAll('.buy-button').forEach(btn => btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showModal();
-    }));
+    
+</script>
+
+
+<div id="orderModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1100; backdrop-filter: blur(10px);">
+    <div class="modal-content" style="background:#111; padding:30px; border-radius:30px; border: 1px solid var(--accent); width: 90%; max-width: 400px; position: relative;">
+        <h3 id="modalCourseTitle" style="color:var(--accent); margin-bottom:20px; font-family:'Montserrat';" data-key="modal_title">Записатися</h3>
+        
+        <form id="leadForm">
+            <input type="hidden" id="courseInput" name="course">
+            
+            <input type="text" id="nameInput" placeholder="Твоє ім'я" data-key-placeholder="modal_name" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:10px; border:1px solid var(--border); background:#222; color:#fff; outline: none;">
+            
+            <input type="text" id="contactInput" placeholder="Telegram @nick або номер" data-key-placeholder="modal_phone" required style="width:100%; padding:12px; margin-bottom:20px; border-radius:10px; border:1px solid var(--border); background:#222; color:#fff; outline: none;">
+            
+            <button type="submit" class="buy-button" data-key="modal_submit">Відправити заявку</button>
+        </form>
+        
+        <p style="color:#888; margin-top:15px; cursor:pointer;" data-key="modal_close" onclick="document.getElementById('orderModal').style.display='none'">Закрити</p>
+    </div>
+</div>
+
+<script>
+    // Логика открытия формы для всех кнопок "Записатися"
+    const buyButtons = document.querySelectorAll('.price-card .buy-button');
+    const orderModal = document.getElementById('orderModal');
+    const courseInput = document.getElementById('courseInput');
+    const modalTitle = document.getElementById('modalCourseTitle');
+
+    buyButtons.forEach(btn => {
+        btn.onclick = function(e) {
+            e.preventDefault();
+            // Находим название курса рядом с нажатой кнопкой
+            const courseBlock = this.closest('.course-block');
+            const card = this.closest('.price-card');
+            
+            let courseName = courseBlock ? courseBlock.querySelector('.course-title').innerText : "Курс";
+            let tariff = card ? card.querySelector('h3').innerText : "Базовий";
+            
+            courseInput.value = `${courseName} (${tariff})`;
+            const lang = localStorage.getItem('selectedLang') || 'uk';
+            modalTitle.innerText = lang === 'en'
+            ? "Enroll in " + courseName
+            : "Запис на " + courseName;  
+            orderModal.style.display = 'flex';
+        };
+    });
+
+    const API_URL = "https://bot-hhqx.onrender.com/lead";
+
+    // Обработка отправки формы
+    document.getElementById('leadForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const lang = localStorage.getItem('selectedLang') || 'uk';
+        const data = {
+            name: document.getElementById('nameInput').value.trim(),
+            contact: document.getElementById('contactInput').value.trim(),
+            course: document.getElementById('courseInput').value,
+            lang
+        };
+
+        try {
+            const res = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            if (!res.ok) throw new Error("Request failed");
+
+            alert(langData[lang].modal_alert || "Thanks! Your request has been received. I will contact you soon.");
+            this.reset();
+            document.getElementById('orderModal').style.display = 'none';
+        } catch (err) {
+            alert(lang === 'en'
+                ? "Something went wrong. Please try again or contact us in Telegram."
+                : "Сталася помилка. Спробуйте ще раз або напишіть у Telegram.");
+        }
+    };
 </script>
 
 </body>
