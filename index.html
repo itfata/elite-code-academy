@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Elite Code Academy | Твій шлях в IT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="ECA.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo-premium.png" type="image/png">
 
    <!-- Google tag (gtag.js) --> 
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17824431691"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17824431691'); </script>
@@ -18,13 +18,13 @@
     top: 20px;
     right: 20px;
     z-index: 1001;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(7, 13, 28, 0.88);
     backdrop-filter: blur(10px);
     border: 1px solid var(--accent);
     padding: 4px;
     border-radius: 50px;
     display: flex;
-    box-shadow: 0 0 15px rgba(0, 255, 238, 0.3);
+    box-shadow: 0 12px 30px rgba(183, 140, 43, 0.22);
 }
 .lang-btn {
     background: transparent;
@@ -38,36 +38,50 @@
     transition: 0.3s;
 }
 .lang-btn.active {
-    background: var(--accent);
-    color: #000;
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    color: #071321;
 }
         :root {
-            --accent: #00ffee; 
-            --bg: #000000;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-            --text-dim: #b0b0b0;
-            --text-bright: #ffffff;
+            --accent: #d8b25f;
+            --accent-soft: #f0dc9c;
+            --accent-deep: #9e7220;
+            --blue: #1f5fbf;
+            --blue-deep: #0a1e45;
+            --bg: #02060f;
+            --bg-soft: #071321;
+            --card-bg: rgba(9, 19, 38, 0.8);
+            --border: rgba(216, 178, 95, 0.18);
+            --border-strong: rgba(216, 178, 95, 0.4);
+            --text-dim: #c4cede;
+            --text-bright: #f8f2e6;
+            --shadow-gold: rgba(183, 140, 43, 0.22);
+            --shadow-blue: rgba(31, 95, 191, 0.25);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Manrope', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(216, 178, 95, 0.12), transparent 28%),
+                radial-gradient(circle at top right, rgba(31, 95, 191, 0.18), transparent 34%),
+                linear-gradient(180deg, #03070f 0%, #071321 45%, #02060f 100%);
             background-color: var(--bg);
             color: var(--text-dim);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         .scroll-target { scroll-margin-top: 90px; }
         .section-title {
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 2.2rem;
             color: var(--text-bright);
             margin-bottom: 10px;
+            letter-spacing: 0.03em;
         }
         .section-subtitle {
             text-align: center;
@@ -82,8 +96,9 @@
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            background: rgba(0, 0, 0, 0.75);
-            border-bottom: 1px solid var(--border);
+            background: rgba(4, 10, 21, 0.78);
+            border-bottom: 1px solid rgba(216, 178, 95, 0.12);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
         .top-nav-inner {
             max-width: 1100px;
@@ -100,18 +115,21 @@
             gap: 12px;
         }
         .nav-logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            border: 1px solid var(--border-strong);
+            background: linear-gradient(180deg, rgba(9, 19, 38, 0.9), rgba(4, 10, 21, 0.95));
+            padding: 4px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
         }
         .brand-mini {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-bright);
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--accent-soft);
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 1.25rem;
         }
         .nav-links {
             display: flex;
@@ -129,14 +147,14 @@
             border: 1px solid transparent;
         }
         .nav-links a:hover {
-            color: #000;
-            background: var(--accent);
+            color: #071321;
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
             border-color: var(--accent);
-            box-shadow: 0 0 12px rgba(0, 255, 238, 0.5);
+            box-shadow: 0 12px 24px var(--shadow-gold);
         }
 
         /* --- Header --- */
-        .hero { padding: 50px 0 20px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+        .hero { padding: 70px 0 30px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
         .hero-left { text-align: left; }
         .hero-head { margin-bottom: 10px; }
         .subtitle { font-size: 1rem; color: var(--accent); font-weight: 500; opacity: 0.95; }
@@ -149,13 +167,14 @@
             margin-bottom: 10px;
         }
         .hero-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.6rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.6rem;
             color: var(--text-bright);
             margin: 10px 0 8px;
-            line-height: 1.2;
+            line-height: 1.05;
+            letter-spacing: 0.01em;
         }
-        .hero-sub { font-size: 1rem; max-width: 620px; opacity: 0.9; }
+        .hero-sub { font-size: 1.05rem; max-width: 620px; opacity: 0.9; color: #d5deea; }
         .hero-badges {
             display: flex;
             flex-wrap: wrap;
@@ -164,29 +183,34 @@
         }
         .hero-badge {
             border: 1px solid var(--border);
-            background: rgba(255,255,255,0.03);
+            background: linear-gradient(180deg, rgba(9, 19, 38, 0.75), rgba(7, 13, 28, 0.9));
             color: var(--text-bright);
             padding: 8px 12px;
             border-radius: 999px;
             font-size: 0.85rem;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
         }
         .hero-actions { margin-top: 22px; }
         .hero-right { display: flex; justify-content: center; }
         .mentor-card {
-            background: var(--card-bg);
+            background:
+                linear-gradient(180deg, rgba(12, 24, 47, 0.9), rgba(4, 10, 21, 0.96));
             border: 1px solid var(--border);
-            border-radius: 28px;
+            border-radius: 32px;
             padding: 18px;
             max-width: 360px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow:
+                0 24px 60px rgba(0,0,0,0.48),
+                0 0 0 1px rgba(255,255,255,0.03),
+                inset 0 1px 0 rgba(255,255,255,0.04);
         }
         .mentor-photo {
             width: 100%;
             border-radius: 22px;
-            border: 1px solid var(--accent);
+            border: 1px solid var(--border-strong);
         }
         .mentor-name { color: var(--text-bright); font-weight: 700; font-size: 1.1rem; margin-top: 12px; }
-        .mentor-role { color: var(--accent); font-size: 0.9rem; margin-bottom: 8px; }
+        .mentor-role { color: var(--accent-soft); font-size: 0.9rem; margin-bottom: 8px; }
         .mentor-short { font-size: 0.95rem; }
         .hero-cta { margin-top: 22px; display: inline-flex; flex-direction: column; gap: 8px; align-items: center; }
         .hero-cta-note { font-size: 0.9rem; opacity: 0.8; }
@@ -199,12 +223,13 @@
             gap: 10px 18px;
         }
         .hero-point {
-            background: rgba(255,255,255,0.04);
+            background: linear-gradient(180deg, rgba(9, 19, 38, 0.68), rgba(6, 13, 25, 0.88));
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 10px 14px;
             font-size: 0.95rem;
             color: var(--text-bright);
+            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
         }
 
         /* --- Mentor Story Section --- */
@@ -220,12 +245,12 @@
             width: 100%;
             max-width: 450px;
             border-radius: 40px;
-            border: 1px solid var(--accent);
-            box-shadow: 0 0 40px rgba(0, 255, 238, 0.15);
+            border: 1px solid var(--border-strong);
+            box-shadow: 0 20px 50px var(--shadow-blue);
         }
         .mentor-content { flex: 1.2; }
         .mentor-content h2 { 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Cormorant Garamond', serif; 
             font-size: 2.3rem; 
             color: var(--text-bright); 
             margin-bottom: 25px; 
@@ -241,15 +266,17 @@
             margin-top: 30px;
         }
         .info-card {
-            background: var(--card-bg);
+            background: linear-gradient(180deg, rgba(9, 19, 38, 0.76), rgba(6, 13, 25, 0.92));
             border: 1px solid var(--border);
             border-radius: 22px;
             padding: 22px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
         }
         .info-card h4 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             color: var(--text-bright);
             margin-bottom: 8px;
+            font-size: 1.5rem;
         }
         .pill {
             display: inline-block;
@@ -265,39 +292,42 @@
             padding: 80px 40px; 
             margin: 40px 0;
             border-radius: 40px;
-            border: 1px solid transparent;
+            border: 1px solid rgba(216, 178, 95, 0.08);
             transition: all 0.5s ease; 
+            background: linear-gradient(180deg, rgba(7, 13, 28, 0.6), rgba(7, 13, 28, 0.2));
         }
 
         /* ЕФЕКТ ПРИ НАВЕДЕННІ НА ВЕСЬ КУРС */
         .course-block:hover {
-            background: rgba(255, 255, 255, 0.02);
-            border-color: rgba(0, 255, 238, 0.3);
+            background: linear-gradient(180deg, rgba(12, 24, 47, 0.58), rgba(7, 13, 28, 0.82));
+            border-color: rgba(216, 178, 95, 0.24);
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
         }
 
         .course-header { text-align: center; margin-bottom: 60px; }
         .course-tag { 
-            background: var(--accent); 
-            color: #000; 
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft)); 
+            color: #071321; 
             padding: 5px 15px; 
             border-radius: 50px; 
             font-weight: 700; 
             font-size: 0.8rem;
             text-transform: uppercase;
+            box-shadow: 0 10px 24px var(--shadow-gold);
         }
         .course-title { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 2.8rem; 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 3.2rem; 
             color: var(--text-bright); 
             margin: 20px 0; 
+            letter-spacing: 0.02em;
         }
 
         /* --- Modules List --- */
         .modules-container { max-width: 800px; margin: 0 auto 60px; }
         .module-item {
-            background: var(--card-bg);
+            background: linear-gradient(180deg, rgba(9, 19, 38, 0.76), rgba(6, 13, 25, 0.92));
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 22px 30px;
@@ -310,17 +340,17 @@
         .module-item:hover {
             border-color: var(--accent);
             transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.06);
+            background: linear-gradient(180deg, rgba(13, 26, 50, 0.92), rgba(8, 16, 31, 0.98));
         }
         .module-number {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--accent);
             min-width: 45px;
         }
         .module-info h4 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem;
             color: var(--text-bright);
             margin-bottom: 5px;
@@ -329,7 +359,7 @@
 
         /* --- Certificate --- */
         .certificate-info {
-            background: linear-gradient(90deg, rgba(0,255,238,0.1), transparent);
+            background: linear-gradient(90deg, rgba(216,178,95,0.16), rgba(31,95,191,0.06), transparent);
             border-left: 4px solid var(--accent);
             padding: 25px;
             border-radius: 0 20px 20px 0;
@@ -343,14 +373,22 @@
         /* --- Price Cards --- */
         .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .price-card {
-            background: rgba(255,255,255,0.04);
+            background: linear-gradient(180deg, rgba(9, 19, 38, 0.82), rgba(6, 13, 25, 0.94));
             border: 1px solid var(--border);
             border-radius: 30px;
             padding: 40px;
             text-align: center;
             transition: 0.4s;
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.24);
         }
-        .price-card.popular { border-color: var(--accent); background: rgba(0, 255, 238, 0.03); }
+        .price-card.popular {
+            border-color: var(--border-strong);
+            background:
+                linear-gradient(180deg, rgba(18, 35, 67, 0.92), rgba(8, 16, 31, 0.98));
+            box-shadow:
+                0 28px 60px rgba(0, 0, 0, 0.32),
+                0 0 36px rgba(216, 178, 95, 0.08);
+        }
         .current-price { font-size: 2.2rem; font-weight: 700; color: var(--accent); }
         .old-price { text-decoration: line-through; opacity: 0.5; font-size: 1.1rem; }
         .price-features { list-style: none; margin: 25px 0; text-align: left; font-size: 0.95rem; }
@@ -363,19 +401,20 @@
             padding: 18px;
             border-radius: 50px;
             border: none;
-            background: var(--accent);
-            color: #000;
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+            color: #071321;
             font-weight: 700;
             font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 14px 30px var(--shadow-gold);
         }
 
         /* Підсвітка кнопки при наведенні на КАРТКУ або КНОПКУ */
         .price-card:hover .buy-button, .buy-button:hover {
-            box-shadow: 0 0 25px var(--accent);
+            box-shadow: 0 18px 35px var(--shadow-gold);
             transform: scale(1.05);
         }
 
@@ -389,10 +428,10 @@
         }
         .stories-marquee:hover .stories-track { animation-play-state: paused; }
         .story-card {
-            background: radial-gradient(120% 120% at 20% 20%, rgba(0,255,238,0.08), rgba(255,255,255,0.02));
+            background: radial-gradient(120% 120% at 20% 20%, rgba(216,178,95,0.12), rgba(31,95,191,0.08) 45%, rgba(255,255,255,0.02));
             padding: 30px;
             border-radius: 26px;
-            border: 1px solid rgba(0,255,238,0.18);
+            border: 1px solid rgba(216,178,95,0.18);
             box-shadow:
                 0 12px 24px rgba(0,0,0,0.45),
                 inset 0 0 0 1px rgba(255,255,255,0.04);
@@ -405,7 +444,7 @@
         /* --- Student Works --- */
         .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 50px 0; }
         .work-card {
-            background: var(--card-bg);
+            background: linear-gradient(180deg, rgba(9, 19, 38, 0.76), rgba(6, 13, 25, 0.92));
             border: 1px solid var(--border);
             border-radius: 25px;
             padding: 20px;
@@ -435,7 +474,16 @@
             background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000; 
             backdrop-filter: blur(10px);
         }
-        .modal-content { background:#111; padding:40px; border-radius:30px; text-align:center; border: 1px solid var(--accent); width: 90%; max-width: 400px; }
+        .modal-content {
+            background: linear-gradient(180deg, rgba(12, 24, 47, 0.96), rgba(4, 10, 21, 0.98));
+            padding:40px;
+            border-radius:30px;
+            text-align:center;
+            border: 1px solid var(--border-strong);
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
         .modal-btn { 
             display: block; width: 100%; margin: 10px 0; padding: 15px; border-radius: 15px; 
             border: none; cursor: pointer; font-weight: 600; color: white; font-size: 1.1rem;
@@ -458,8 +506,8 @@
         }
 
         @media (max-width: 850px) {
-            .course-title { font-size: 2.2rem; }
-            .hero-title { font-size: 2rem; }
+            .course-title { font-size: 2.5rem; }
+            .hero-title { font-size: 2.7rem; }
             .hero-left { text-align: center; }
         }
     </style>
@@ -473,7 +521,7 @@
     <nav class="top-nav">
         <div class="top-nav-inner">
             <div class="brand-group">
-                <img src="ECA.jpeg" alt="Elite Code Academy" class="nav-logo">
+                <img src="logo-premium.png" alt="Elite Code Academy" class="nav-logo">
                 <div class="brand-mini">Elite Code Academy</div>
             </div>
             <div class="nav-links">
@@ -734,7 +782,7 @@
     </section>
 
     <section class="fade-in scroll-target" style="padding: 60px 0;" id="reviews">
-        <h2 style="text-align: center; font-family: 'Montserrat'; font-size: 2.2rem; color: #fff;" data-key="stories_h">Історії успіху</h2>
+        <h2 class="section-title" data-key="stories_h">Історії успіху</h2>
         <div class="stories-marquee">
             <div class="stories-track" id="storiesTrack">
                 <div class="story-card">
@@ -766,7 +814,7 @@
     </section>
 
     <section class="fade-in scroll-target" style="padding: 60px 0;" id="works">
-        <h2 style="text-align: center; font-family: 'Montserrat'; font-size: 2.2rem; color: #fff;" data-key="works_h">Роботи учнів</h2>
+        <h2 class="section-title" data-key="works_h">Роботи учнів</h2>
         <p style="text-align:center; margin-top:10px;" data-key="works_subtitle">Відео проєктів моїх учнів — натхнення для тебе</p>
         <div class="works-grid">
             <div class="work-card">
@@ -1151,15 +1199,15 @@
 
 
 <div id="orderModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1100; backdrop-filter: blur(10px);">
-    <div class="modal-content" style="background:#111; padding:30px; border-radius:30px; border: 1px solid var(--accent); width: 90%; max-width: 400px; position: relative;">
-        <h3 id="modalCourseTitle" style="color:var(--accent); margin-bottom:20px; font-family:'Montserrat';" data-key="modal_title">Записатися</h3>
+    <div class="modal-content" style="padding:30px; width: 90%; max-width: 400px; position: relative;">
+        <h3 id="modalCourseTitle" style="color:var(--accent); margin-bottom:20px; font-family:'Cormorant Garamond', serif; font-size: 2rem;" data-key="modal_title">Записатися</h3>
         
         <form id="leadForm">
             <input type="hidden" id="courseInput" name="course">
             
-            <input type="text" id="nameInput" placeholder="Твоє ім'я" data-key-placeholder="modal_name" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:10px; border:1px solid var(--border); background:#222; color:#fff; outline: none;">
+            <input type="text" id="nameInput" placeholder="Твоє ім'я" data-key-placeholder="modal_name" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:10px; border:1px solid var(--border); background:#0b1730; color:#fff; outline: none;">
             
-            <input type="text" id="contactInput" placeholder="Telegram @nick або номер" data-key-placeholder="modal_phone" required style="width:100%; padding:12px; margin-bottom:20px; border-radius:10px; border:1px solid var(--border); background:#222; color:#fff; outline: none;">
+            <input type="text" id="contactInput" placeholder="Telegram @nick або номер" data-key-placeholder="modal_phone" required style="width:100%; padding:12px; margin-bottom:20px; border-radius:10px; border:1px solid var(--border); background:#0b1730; color:#fff; outline: none;">
             
             <button type="submit" class="buy-button" data-key="modal_submit">Відправити заявку</button>
         </form>
