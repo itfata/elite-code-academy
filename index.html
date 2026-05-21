@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Elite Code Academy | Твій шлях в IT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="logo-premium.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo-mark.png" type="image/png">
 
    <!-- Google tag (gtag.js) --> 
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17824431691"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17824431691'); </script>
@@ -112,24 +112,41 @@
         .brand-group {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
         .nav-logo {
-            width: 54px;
-            height: 54px;
-            border-radius: 16px;
-            border: 1px solid var(--border-strong);
-            background: linear-gradient(180deg, rgba(9, 19, 38, 0.9), rgba(4, 10, 21, 0.95));
-            padding: 4px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            width: 58px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            filter:
+                drop-shadow(0 8px 18px rgba(216, 178, 95, 0.18))
+                drop-shadow(0 2px 10px rgba(255, 226, 177, 0.18));
+        }
+        .brand-lockup {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            line-height: 1;
         }
         .brand-mini {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--accent-soft);
-            font-weight: 700;
-            letter-spacing: 0.08em;
+            font-family: 'Michroma', sans-serif;
             text-transform: uppercase;
-            font-size: 1.25rem;
+            background: linear-gradient(180deg, #f7e7bc 0%, #e0b86f 52%, #fff1d2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 18px rgba(224, 184, 111, 0.08);
+        }
+        .brand-main {
+            font-size: 1.55rem;
+            letter-spacing: 0.28em;
+            white-space: nowrap;
+        }
+        .brand-sub {
+            font-size: 0.62rem;
+            letter-spacing: 0.78em;
+            padding-left: 0.18em;
         }
         .nav-links {
             display: flex;
@@ -509,6 +526,9 @@
             .course-title { font-size: 2.5rem; }
             .hero-title { font-size: 2.7rem; }
             .hero-left { text-align: center; }
+            .brand-main { font-size: 1.2rem; letter-spacing: 0.18em; }
+            .brand-sub { font-size: 0.56rem; letter-spacing: 0.48em; }
+            .nav-logo { width: 48px; }
         }
     </style>
 </head>
@@ -521,8 +541,11 @@
     <nav class="top-nav">
         <div class="top-nav-inner">
             <div class="brand-group">
-                <img src="logo-premium.png" alt="Elite Code Academy" class="nav-logo">
-                <div class="brand-mini">Elite Code Academy</div>
+                <img src="logo-mark.png" alt="Elite Code Academy" class="nav-logo">
+                <div class="brand-lockup" aria-label="Elite Code Academy">
+                    <div class="brand-mini brand-main">Elite Code</div>
+                    <div class="brand-mini brand-sub">Academy</div>
+                </div>
             </div>
             <div class="nav-links">
                 <a href="#how" data-key="nav_how">Як проходить</a>
