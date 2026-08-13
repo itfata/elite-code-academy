@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Результати студентів | Elite Code Academy</title>
+    <meta name="description" content="Результати студентів Elite Code Academy: перші ігри, перші сайти та відгуки тих, хто починав з нуля.">
+    <meta property="og:title" content="Результати студентів | Elite Code Academy">
+    <meta property="og:description" content="Подивіться на перші проєкти студентів Elite Code Academy та їх відгуки після навчання.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elitecode.co.ua/students">
+    <meta property="og:image" content="https://elitecode.co.ua/logo-mark.png">
+    <link rel="canonical" href="https://elitecode.co.ua/students">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo-mark.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17824431691"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17824431691');
+    </script>
+</head>
+<body data-page="students">
+    <div class="site-shell">
+        <div id="site-nav"></div>
+        <main>
+            <section class="section inner-hero">
+                <div class="container narrow reveal">
+                    <p class="eyebrow" data-i18n="students.hero.eyebrow">Students</p>
+                    <h1 class="display-title display-title-small" data-i18n="students.hero.title">Вони теж починали з нуля. Тепер вони створюють.</h1>
+                    <p class="hero-text" data-i18n="students.hero.text">Ця сторінка зібрана лише з підтверджених результатів, які вже були в існуючих матеріалах Elite Code Academy.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="student-grid student-grid-full" id="students-page-grid"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="eyebrow" data-i18n="students.testimonials.eyebrow">Voices</p>
+                        <h2 data-i18n="students.testimonials.title">За кожним першим проєктом стоїть зрозумілий фідбек і практика.</h2>
+                        <p data-i18n="students.testimonials.text">Не сухі коментарі заради коментарів, а нормальний людський розбір: що вже виходить, де ти застряг(ла) і як зробити краще.</p>
+                    </div>
+                    <div class="quote-grid" id="feedback-notes"></div>
+                    <div class="quote-grid" id="student-quotes"></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="cta-band reveal">
+                        <div>
+                            <p class="eyebrow" data-i18n="students.cta.eyebrow">Next step</p>
+                            <h2 data-i18n="students.cta.title">Хочеш створити свій перший проєкт?</h2>
+                            <p data-i18n="students.cta.text">Обери курс і почни рух від "я не розумію код" до "я можу зробити це самостійно".</p>
+                        </div>
+                        <div class="cta-band-actions">
+                            <a class="btn btn-primary" href="courses.html#courses" data-i18n="actions.chooseCourse">Обрати курс</a>
+                            <button class="btn btn-secondary js-open-application" type="button" data-i18n="actions.askQuestion">Поставити запитання</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="site-footer"></div>
+        <div id="application-modal-root"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
