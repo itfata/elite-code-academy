@@ -974,6 +974,7 @@ function bindModal() {
         modal.setAttribute("aria-hidden", "true");
     };
 
+    window.openApplicationModal = openModal;
     document.querySelectorAll(".js-open-application").forEach(button => {
         button.addEventListener("click", () => openModal(button.dataset.course || "", button.dataset.plan || ""));
     });
@@ -1325,6 +1326,57 @@ function initJourneyProgress() {
     });
 }
 
+function initPricingTabs() {
+    const root = document.getElementById("home-pricing");
+    const tabs = [...document.querySelectorAll(".pricing-home .tabs [role=tab]")];
+    if (!root || !tabs.length) return;
+
+    const show = key => {
+        tabs.forEach(tab => {
+            const active = tab.dataset.course === key;
+            tab.setAttribute("aria-selected", String(active));
+            tab.tabIndex = active ? 0 : -1;
+        });
+        root.setAttribute("aria-labelledby", `tab-${key}`);
+        renderPricing("home-pricing", key);
+        root.querySelectorAll(".reveal").forEach(card => card.classList.add("is-visible"));
+        root.querySelectorAll(".js-open-application").forEach(button => {
+            button.addEventListener("click", () => {
+                window.openApplicationModal?.(button.dataset.course || "", button.dataset.plan || "");
+            });
+        });
+    };
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => show(tab.dataset.course));
+        tab.addEventListener("keydown", event => {
+            if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+            const next = tabs[(index + (event.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+            next.focus();
+            show(next.dataset.course);
+        });
+    });
+    show("python");
+}
+
+function initStickyCta() {
+    const bar = document.getElementById("sticky-cta");
+    const hero = document.querySelector(".hero-section");
+    const end = document.getElementById("start");
+    if (!bar || !hero || !("IntersectionObserver" in window)) return;
+    let heroGone = false;
+    let endVisible = false;
+    const update = () => bar.classList.toggle("is-visible", heroGone && !endVisible);
+    new IntersectionObserver(entries => {
+        heroGone = !entries[0].isIntersecting;
+        update();
+    }, { threshold: 0 }).observe(hero);
+    if (end) new IntersectionObserver(entries => {
+        endVisible = entries[0].isIntersecting;
+        update();
+    }, { threshold: 0.2 }).observe(end);
+}
+
 function renderValues() {
     const root = document.getElementById("value-grid");
     if (!root) return;
@@ -1377,6 +1429,8 @@ function renderPage() {
     renderModal();
     initHeroTerminal();
     initJourneyProgress();
+    initPricingTabs();
+    initStickyCta();
     observeReveals();
     initStudentVideoHoverPlayback();
 }
