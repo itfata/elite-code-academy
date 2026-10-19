@@ -26,10 +26,10 @@ const content = {
                 eyebrow: "ELITE CODE ACADEMY",
                 title: "Твій перший серйозний крок у світ технологій.",
                 text: "Навчайся програмуванню через практику, підтримку ментора та реальні проєкти для портфоліо.",
-                visualLabel: "learning flow",
+                visualLabel: "Навчальний шлях",
                 metricLabel: "Фокус курсу",
                 metricNote: "модулів з практикою та фінальним проєктом",
-                founderLabel: "Founder & Mentor"
+                founderLabel: "Засновниця та менторка"
             },
             proof: {
                 eyebrow: "Реальна освіта",
@@ -60,7 +60,7 @@ const content = {
                 title: "Що говорять студенти після навчання."
             },
             founder: {
-                eyebrow: "Meet the founder",
+                eyebrow: "Засновниця академії",
                 title: "Катерина Руденко",
                 lead: "Я створила Elite Code Academy, щоб програмування перестало здаватися чимось недосяжним для тих, хто лише починає.",
                 text: "Тут студент не просто дивиться урок. Він пише код, отримує фідбек, проходить через труднощі з підтримкою і доходить до власного результату."
@@ -73,7 +73,7 @@ const content = {
         },
         courses: {
             hero: {
-                eyebrow: "Courses",
+                eyebrow: "Курси",
                 title: "Обери напрямок. Ми допоможемо почати.",
                 text: "Кожен курс побудований для початківця: зрозуміле пояснення, практика, підтримка та фінальний результат."
             },
@@ -84,7 +84,7 @@ const content = {
                 format: "Self-Study або Full Support",
                 forWhom: "Для тих, хто хоче зрозуміти основи програмування, навчитися мислити логікою коду і створити свій перший Python-проєкт.",
                 learn: "Змінні, типи даних, умови, цикли, списки, словники, функції, модулі, базову структуру реального коду, а також що таке CRM-системи, GitHub і як з ними працювати.",
-                build: "Фінальний проєкт на Python на базі пройдених тем. На чинному сайті це описано як власна мінігра."
+                build: "Фінальний проєкт на Python на базі пройдених тем: власна мінігра або невеликий застосунок."
             },
             frontend: {
                 eyebrow: "Frontend Foundations",
@@ -103,18 +103,18 @@ const content = {
                 forWhomTitle: "Для кого",
                 learnTitle: "Що вивчиш",
                 buildTitle: "Що створиш",
-                curriculumEyebrow: "Curriculum",
+                curriculumEyebrow: "Програма",
                 curriculumTitle: "Програма курсу",
-                pricingEyebrow: "Pricing",
+                pricingEyebrow: "Тарифи",
                 pricingTitle: "Обери формат навчання",
-                recommended: "Рекомендовано"
+                recommended: "Популярний"
             },
             faq: {
                 eyebrow: "FAQ",
                 title: "Питання перед стартом"
             },
             apply: {
-                eyebrow: "Application",
+                eyebrow: "Заявка",
                 title: "Готово почати навчання?",
                 text: "Оберіть курс і тариф, залиште контакт, і ми надішлемо деталі навчання.",
                 primary: "Почати навчання"
@@ -122,56 +122,56 @@ const content = {
         },
         students: {
             hero: {
-                eyebrow: "Students",
+                eyebrow: "Результати студентів",
                 title: "Вони теж починали з нуля. Тепер вони створюють.",
                 text: "Ця сторінка зібрана лише з підтверджених результатів, які вже були в існуючих матеріалах Elite Code Academy."
             },
             testimonials: {
-                eyebrow: "Voices",
+                eyebrow: "Відгуки",
                 title: "За кожним першим проєктом стоїть зрозумілий фідбек і практика.",
                 text: "Не сухі коментарі заради коментарів, а нормальний людський розбір: що вже виходить, де ти застряг(ла) і як зробити краще."
             },
             cta: {
-                eyebrow: "Next step",
+                eyebrow: "Наступний крок",
                 title: "Хочеш створити свій перший проєкт?",
                 text: "Обери курс і почни рух від \"я не розумію код\" до \"я можу зробити це самостійно\"."
             }
         },
         about: {
             hero: {
-                eyebrow: "About Elite Code Academy",
+                eyebrow: "Про Elite Code Academy",
                 title: "Середовище, де початківець бачить свій прогрес власними очима.",
                 text: "Elite Code Academy існує для того, щоб перший крок у програмуванні був зрозумілим, практичним і людяним."
             },
             mission: {
-                eyebrow: "Mission",
+                eyebrow: "Місія",
                 title: "Ми створюємо середовище, де можна стартувати без страху.",
                 text: "Навчання побудоване так, щоб студент не втрачав мотивацію на перших кроках і бачив, як теорія переходить у власний результат."
             },
             philosophy: {
-                eyebrow: "Philosophy",
+                eyebrow: "Підхід",
                 title: "Практика важливіша за шум.",
                 text: "У центрі навчання не гучні обіцянки, а зрозумілі пояснення, домашні завдання, розбір помилок і постійний рух до першого проєкту."
             },
             values: {
-                eyebrow: "Values",
+                eyebrow: "Цінності",
                 title: "Що тримає Elite Code Academy разом"
             },
             founder: {
-                eyebrow: "Founder & Mentor",
+                eyebrow: "Засновниця та менторка",
                 lead: "Шлях у програмування не завжди починається з впевненості. І саме тому Elite Code Academy побудована на підтримці.",
-                text1: "На чинному сайті Катерина прямо говорить, що колись сама не бачила себе в IT і навіть отримала 0 на іспиті з математики. Зараз цей досвід перетворився на спосіб пояснювати складні теми просто і без зверхності.",
+                text1: "Катерина колись сама не бачила себе в IT і навіть отримала 0 на іспиті з математики. Зараз цей досвід перетворився на спосіб пояснювати складні теми просто і без зверхності.",
                 text2: "Роль ментора тут не зводиться до записаних уроків. Це допомога, розбір помилок, підтримка у складних місцях і фокус на тому, щоб студент дійшов до власної роботи."
             },
             story: {
-                eyebrow: "Story of Founder & Mentor",
+                eyebrow: "Історія засновниці",
                 text1: "Я довго не розуміла, ким хочу бути. Після іспиту з математики в мене стояв 0, і в той момент здавалося, що жоден університет не захоче мене взяти.",
                 text2: "Я не планувала ставати айтішницею. Навпаки, мені здавалося, що це точно не моя дорога. Але життя направило мене саме туди, де я найбільше сумнівалася в собі.",
                 text3: "Коли починаєш навчання з нуля, це важко. Ти постійно губишся, кидаєш, починаєш заново і не розумієш, чи це взагалі твоє. Саме тому я побудувала Elite Code Academy так, щоб людина не просто вчилася, а могла чесно зрозуміти: їй це справді підходить чи ні.",
                 signature: "— Katya Rudenko"
             },
             cta: {
-                eyebrow: "Start",
+                eyebrow: "Початок",
                 title: "Готові обрати свій перший курс?",
                 text: "Перейдіть до курсів або залиште заявку, щоб отримати деталі навчання."
             }
@@ -533,7 +533,7 @@ const studentCases = {
             duration: "1 місяць",
             project: "Перша гра",
             video: "1.mp4",
-            outcome: "На чинному сайті результат позначений як гра за 1 місяць.",
+            outcome: "Першу гру створено за 1 місяць навчання.",
             quote: "Перший робочий проєкт після старту з нуля."
         },
         {
@@ -1088,8 +1088,9 @@ function renderCoursePreview() {
 function renderJourney(rootId) {
     const root = document.getElementById(rootId);
     if (!root) return;
+    root.classList.add("journey-grid--path");
     root.innerHTML = journeyData[currentLang].map(item => `
-        <article class="journey-card reveal">
+        <article class="journey-card reveal" data-journey-step="${item.step}">
             <p class="journey-step">${item.step}</p>
             <strong>${item.title}</strong>
             <p>${item.text}</p>
@@ -1104,23 +1105,23 @@ function renderStudentCards(rootId, limit = null) {
     root.innerHTML = cases.map(student => `
         <article class="student-card reveal">
             <button class="student-visual student-visual-button js-open-video" type="button" data-video-src="${student.video}" data-video-title="${student.project}" aria-label="${t("videoModal.playLabel")}">
-                <video class="student-video js-student-video" muted playsinline loop preload="metadata" poster="">
+                <video class="student-video js-student-video" muted playsinline loop preload="none" poster="">
                     <source src="${student.video}" type="video/mp4">
                 </video>
                 <span>${student.project}</span>
             </button>
             <div class="student-meta">
                 <span>${student.name}</span>
+                <span>${student.course}</span>
                 <span>${student.duration}</span>
             </div>
-            <strong>${student.course}</strong>
             <p>${student.outcome}</p>
             <div class="student-quote">${student.quote}</div>
         </article>
     `).join("");
 }
 
-function initStudentVideoAutoplay() {
+function initStudentVideoHoverPlayback() {
     const videos = document.querySelectorAll(".js-student-video");
     if (!videos.length) return;
 
@@ -1132,23 +1133,16 @@ function initStudentVideoAutoplay() {
         }
     };
 
-    if (!("IntersectionObserver" in window)) {
-        videos.forEach(playVideo);
-        return;
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            const video = entry.target;
-            if (entry.isIntersecting && entry.intersectionRatio > 0.45) {
-                playVideo(video);
-            } else {
-                video.pause();
-            }
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    videos.forEach(video => {
+        const card = video.closest(".student-card");
+        if (!card) return;
+        card.addEventListener("mouseenter", () => playVideo(video));
+        card.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0;
         });
-    }, { threshold: [0.45, 0.7] });
-
-    videos.forEach(video => observer.observe(video));
+    });
 }
 
 function bindVideoModal() {
@@ -1244,13 +1238,14 @@ function renderCurriculum(rootId, courseKey) {
     const root = document.getElementById(rootId);
     if (!root) return;
     root.innerHTML = curriculum[courseKey][currentLang].map(item => `
-        <article class="curriculum-item reveal">
-            <div class="curriculum-index">${item[0]}</div>
-            <div>
+        <details class="curriculum-item reveal">
+            <summary>
+                <span class="curriculum-index">${item[0]}</span>
                 <strong>${item[1]}</strong>
-                <p>${item[2]}</p>
-            </div>
-        </article>
+                <span class="curriculum-count">1 урок</span>
+            </summary>
+            <p>${item[2]}</p>
+        </details>
     `).join("");
 }
 
@@ -1274,14 +1269,60 @@ function renderPricing(rootId, courseKey) {
 }
 
 function renderFaq() {
-    const root = document.getElementById("faq-list");
-    if (!root) return;
-    root.innerHTML = faqData[currentLang].map(item => `
+    const markup = faqData[currentLang].map(item => `
         <details class="faq-item reveal">
             <summary>${item[0]}</summary>
             <p>${item[1]}</p>
         </details>
     `).join("");
+    document.querySelectorAll("#faq-list, #home-faq-list").forEach(root => {
+        root.innerHTML = markup;
+    });
+}
+
+function initHeroTerminal() {
+    const root = document.getElementById("hero-terminal-code");
+    if (!root) return;
+    const lines = ["start()", "learn_basics()", "build_project()", "ask_mentor()", "launch()"];
+    const source = lines.join("\n");
+    const render = count => {
+        root.innerHTML = source.slice(0, count).split("\n").map(line => {
+            const match = line.match(/^([a-z_]+)/);
+            return match ? `<span class="hero-terminal__keyword">${match[1]}</span>${line.slice(match[1].length)}` : line;
+        }).join("\n");
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        render(source.length);
+        return;
+    }
+    let position = 0;
+    const typeNext = () => {
+        position += 1;
+        render(position);
+        if (position < source.length) window.setTimeout(typeNext, 30);
+    };
+    window.setTimeout(typeNext, 220);
+}
+
+function initJourneyProgress() {
+    document.querySelectorAll(".journey-grid--path").forEach(grid => {
+        const cards = [...grid.querySelectorAll(".journey-card")];
+        const update = count => {
+            const active = Math.max(1, count);
+            grid.style.setProperty("--journey-progress", `${cards.length > 1 ? ((active - 1) / (cards.length - 1)) * 100 : 100}%`);
+            cards.forEach((card, index) => card.classList.toggle("is-reached", index < active));
+        };
+        update(1);
+        if (!("IntersectionObserver" in window)) return update(cards.length);
+        let furthest = 1;
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            furthest = Math.max(furthest, cards.indexOf(entry.target) + 1);
+            update(furthest);
+            observer.unobserve(entry.target);
+        }), { threshold: 0.55 });
+        cards.forEach(card => observer.observe(card));
+    });
 }
 
 function renderValues() {
@@ -1334,8 +1375,10 @@ function renderPage() {
     renderValues();
     renderFooter();
     renderModal();
+    initHeroTerminal();
+    initJourneyProgress();
     observeReveals();
-    initStudentVideoAutoplay();
+    initStudentVideoHoverPlayback();
 }
 
 document.addEventListener("DOMContentLoaded", renderPage);
