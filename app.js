@@ -441,6 +441,16 @@ const trustChips = {
     en: ["Python", "Frontend", "Mentor Support", "Real Projects", "Certificate"]
 };
 
+// Hero metrics are kept separate so the academy can update them without changing the page layout.
+const heroStats = {
+    uk: [
+        { value: "100+", label: "студентів" },
+        { value: "50+", label: "проєктів" },
+        { value: "5", label: "напрямків навчання" },
+        { value: "1:1", label: "підтримка ментора" }
+    ]
+};
+
 const proofCards = {
     uk: [
         { title: "Навчання з нуля", text: "Курси спроєктовані для тих, хто тільки починає і хоче розуміти кожен крок." },
@@ -780,7 +790,7 @@ const valueCards = {
     ]
 };
 
-let currentLang = localStorage.getItem("selectedLang") || "uk";
+let currentLang = "uk";
 
 function t(path) {
     return path.split(".").reduce((value, part) => value && value[part], content[currentLang]) || "";
@@ -805,13 +815,7 @@ function renderNav() {
                     <nav class="nav-links" aria-label="Primary">
                         ${pageLinks.map(link => `<a class="nav-link ${page === link.key ? "is-active" : ""}" href="${link.href}">${t(`nav.${link.key}`)}</a>`).join("")}
                     </nav>
-                    <div class="nav-actions">
-                        <div class="lang-switch" aria-label="Language switcher">
-                            <button class="lang-btn ${currentLang === "uk" ? "is-active" : ""}" data-lang="uk" type="button">UA</button>
-                            <button class="lang-btn ${currentLang === "en" ? "is-active" : ""}" data-lang="en" type="button">EN</button>
-                        </div>
-                        <a class="btn btn-secondary" href="courses.html#courses">${t("nav.cta")}</a>
-                    </div>
+                    <div class="nav-actions"><a class="btn btn-secondary" href="courses.html#courses">${t("nav.cta")}</a></div>
                 </div>
             </div>
         </header>
@@ -828,13 +832,6 @@ function renderNav() {
         });
     }
 
-    navRoot.querySelectorAll("[data-lang]").forEach(button => {
-        button.addEventListener("click", () => {
-            currentLang = button.dataset.lang;
-            localStorage.setItem("selectedLang", currentLang);
-            renderPage();
-        });
-    });
 }
 
 function renderFooter() {
@@ -1036,6 +1033,10 @@ function renderHeroChips() {
     const chips = document.getElementById("hero-chips");
     if (!chips) return;
     chips.innerHTML = trustChips[currentLang].map(item => `<span class="chip">${item}</span>`).join("");
+
+    const stats = document.getElementById("hero-stats");
+    if (!stats) return;
+    stats.innerHTML = (heroStats[currentLang] || heroStats.uk).map(item => `<div class="hero-stat"><strong>${item.value}</strong><span>${item.label}</span></div>`).join("");
 }
 
 function renderProofCards() {

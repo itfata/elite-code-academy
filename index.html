@@ -29,6 +29,13 @@
         <div id="site-nav"></div>
         <main>
             <section class="section hero-section">
+                <div class="hero-atmosphere" aria-hidden="true">
+                    <span class="hero-orbit hero-orbit-one"></span>
+                    <span class="hero-orbit hero-orbit-two"></span>
+                    <span class="hero-code hero-code-one">{ learn }</span>
+                    <span class="hero-code hero-code-two">01 / START</span>
+                    <span class="hero-code hero-code-three">&lt;build /&gt;</span>
+                </div>
                 <div class="container hero-layout">
                     <div class="hero-copy reveal">
                         <p class="eyebrow" data-i18n="home.hero.eyebrow">ELITE CODE ACADEMY</p>
@@ -39,41 +46,7 @@
                             <a class="btn btn-secondary" href="students.html" data-i18n="actions.studentResults">Результати студентів</a>
                         </div>
                         <div class="trust-chips" id="hero-chips"></div>
-                    </div>
-                    <div class="hero-visual reveal">
-                        <div class="glass-stage">
-                            <div class="glass-reflection"></div>
-                            <div class="stage-panel stage-panel-code">
-                                <div class="stage-topline">
-                                    <span data-i18n="home.hero.visualLabel">learning flow</span>
-                                    <span>01 / 03</span>
-                                </div>
-                                <pre class="code-block"><code>start()
-learn_basics()
-build_project()
-ask_mentor()
-launch()</code></pre>
-                            </div>
-                            <div class="stage-panel stage-panel-metrics">
-                                <p class="metric-label" data-i18n="home.hero.metricLabel">Фокус курсу</p>
-                                <div class="metric-row">
-                                    <span>Python</span>
-                                    <span>23</span>
-                                </div>
-                                <div class="metric-row">
-                                    <span>HTML/CSS</span>
-                                    <span>15</span>
-                                </div>
-                                <div class="metric-note" data-i18n="home.hero.metricNote">модулів з практикою та фінальним проєктом</div>
-                            </div>
-                            <div class="stage-panel stage-panel-founder">
-                                <img src="Katya.jpeg" alt="Катерина Руденко" loading="eager">
-                                <div>
-                                    <p class="founder-mini" data-i18n="home.hero.founderLabel">Founder &amp; Mentor</p>
-                                    <strong data-i18n="founder.name">Катерина Руденко</strong>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="hero-stats" id="hero-stats" aria-label="Ключові показники Elite Code Academy"></div>
                     </div>
                 </div>
             </section>
@@ -105,7 +78,6 @@ launch()</code></pre>
                     <div class="section-heading reveal">
                         <p class="eyebrow" data-i18n="home.courses.eyebrow">Напрямки навчання</p>
                         <h2 data-i18n="home.courses.title">Два чіткі маршрути для старту.</h2>
-                        <p data-i18n="home.courses.text">На головній лише короткий огляд. Повні програми, тарифи та форма заявки зібрані на окремій сторінці курсів.</p>
                     </div>
                     <div class="course-preview-grid" id="course-preview-grid"></div>
                 </div>
@@ -126,7 +98,6 @@ launch()</code></pre>
                     <div class="section-heading reveal">
                         <p class="eyebrow" data-i18n="home.students.eyebrow">Результати</p>
                         <h2 data-i18n="home.students.title">Вони теж починали з нуля.</h2>
-                        <p data-i18n="home.students.text">Ми використовуємо тільки ті студентські результати, які вже були в існуючому сайті та матеріалах проєкту.</p>
                     </div>
                     <div class="student-grid" id="home-students-grid"></div>
                     <div class="center-cta reveal">
