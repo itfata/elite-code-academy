@@ -1066,21 +1066,30 @@ function renderFeatureCards() {
 function renderCoursePreview() {
     const root = document.getElementById("course-preview-grid");
     if (!root) return;
+    const uk = currentLang === "uk";
+    const visuals = {
+        python: `<div class="cp-visual cp-visual-code" aria-hidden="true"><div class="cp-dots"><i></i><i></i><i></i><span>main.py</span></div><pre><code><span class="k">def</span> <span class="f">launch</span>():
+    name = <span class="f">input</span>(<span class="s">"Твоє ім'я: "</span>)
+    <span class="f">print</span>(<span class="s">f"Привіт, {name}!"</span>)
+    <span class="c"># твоя перша гра</span></code></pre></div>`,
+        frontend: `<div class="cp-visual cp-visual-shot"><div class="cp-dots"><i></i><i></i><i></i><span>приклад проєкту</span></div><img src="assets/site-example.webp" alt="Приклад сайту, який створюється на курсі Frontend" width="1280" height="760" loading="lazy"></div>`
+    };
     root.innerHTML = Object.entries(coursesData).map(([key, course]) => `
-        <article class="course-preview-card reveal">
-            <div>
-                <p class="eyebrow">${course.themes[currentLang]}</p>
+        <article class="course-preview-card reveal" data-course-card="${key}">
+            <span class="cp-glow" aria-hidden="true"></span>
+            ${visuals[key] || ""}
+            <div class="cp-body">
+                <div class="cp-tags"><span>${key === "python" ? "Python" : "HTML / CSS"}</span><span>Для початківців</span><span>Сертифікат</span></div>
                 <strong>${course.themes[currentLang]}</strong>
                 <p>${course.result[currentLang]}</p>
-                <div class="course-preview-meta">
-                    <span class="meta-pill">${course.modules} ${currentLang === "uk" ? "модулів" : "modules"}</span>
-                    <span class="meta-pill">${course.format[currentLang]}</span>
-                    <span class="meta-pill">${course.price[currentLang]}</span>
-                </div>
+                <ul class="cp-facts"><li><b>${course.modules}</b> ${uk ? "модулів" : "modules"}</li><li><b>6</b> ${uk ? "місяців доступу" : "months of access"}</li><li>${course.format[currentLang]}</li></ul>
             </div>
-            <div>
+            <div class="cp-footer">
+                <span class="cp-price">${course.price[currentLang]}${uk && ({ python: "3600 грн", frontend: "2600 грн" })[key] ? ` <s>${({ python: "3600 грн", frontend: "2600 грн" })[key]}</s>` : ""}</span>
+                <div class="cp-actions">
                 <a class="btn btn-secondary" href="${course.href}">${t("actions.learnMore")}</a>
                 <button class="btn btn-primary js-open-application" type="button" data-course="${key}" data-plan="${key === "python" ? "self" : "basic"}">${t("actions.chooseCourse")}</button>
+                </div>
             </div>
         </article>
     `).join("");
