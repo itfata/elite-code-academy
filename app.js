@@ -1085,7 +1085,7 @@ function renderCoursePreview() {
                 <ul class="cp-facts"><li><b>${course.modules}</b> ${uk ? "модулів" : "modules"}</li><li><b>6</b> ${uk ? "місяців доступу" : "months of access"}</li><li>${course.format[currentLang]}</li></ul>
             </div>
             <div class="cp-footer">
-                <span class="cp-price">${course.price[currentLang]}${uk && ({ python: "3600 грн", frontend: "2600 грн" })[key] ? ` <s>${({ python: "3600 грн", frontend: "2600 грн" })[key]}</s>` : ""}</span>
+                <span class="cp-price">${course.price[currentLang]}</span>
                 <div class="cp-actions">
                 <a class="btn btn-secondary" href="${course.href}">${t("actions.learnMore")}</a>
                 <button class="btn btn-primary js-open-application" type="button" data-course="${key}" data-plan="${key === "python" ? "self" : "basic"}">${t("actions.chooseCourse")}</button>
@@ -1267,8 +1267,7 @@ function renderPricing(rootId, courseKey) {
             ${plan.recommended ? `<span class="pricing-badge">${t("courses.shared.recommended")}</span>` : ""}
             <strong>${plan.name}</strong>
             <div class="price-stack">
-                <span class="price-regular">${plan.fullPrice}</span>
-                <div class="price-value">${plan.price} <span class="price-discount">−50%</span></div>
+                <div class="price-value">${plan.price}</div>
             </div>
             <ul>
                 ${plan.features.map(feature => `<li>${feature}</li>`).join("")}
