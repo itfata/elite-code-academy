@@ -62,8 +62,14 @@ const content = {
             founder: {
                 eyebrow: "Засновниця академії",
                 title: "Катерина Руденко",
-                lead: "Я створила Elite Code Academy, щоб програмування перестало здаватися чимось недосяжним для тих, хто лише починає.",
-                text: "Тут студент не просто дивиться урок. Він пише код, отримує фідбек, проходить через труднощі з підтримкою і доходить до власного результату."
+                lead: "Я починала з нуля чотири рази. І щоразу поверталась.",
+                text: "Я не математичний геній: іспит із математики я написала на 0, і жоден університет не хотів мене брати. На базу пішов цілий рік, бо я кидала і починала заново, замість того щоб просто сісти й розібратися. Я не знала, ким хочу бути, але точно знала, що IT — не моє. Життя показало навпаки. Я бачила, як люди мучаться на цьому шляху, тому зібрала все воєдино — щоб тобі було простіше, ніж було мені.",
+                f1: "рази починала з нуля",
+                f2: "рік пішов на базу",
+                f3: "бал за іспит з математики",
+                quote: "Не математика вирішує, ким ти станеш. Вирішують шляхи, які ти побачиш, коли її обійдеш.",
+                quoteBy: "Катерина Руденко",
+                belief: "Я вірю, що послідовність і повторення — ключ до успіху."
             },
             cta: {
                 eyebrow: "Старт",
@@ -160,14 +166,14 @@ const content = {
             founder: {
                 eyebrow: "Засновниця та менторка",
                 lead: "Шлях у програмування не завжди починається з впевненості. І саме тому Elite Code Academy побудована на підтримці.",
-                text1: "Катерина колись сама не бачила себе в IT і навіть отримала 0 на іспиті з математики. Зараз цей досвід перетворився на спосіб пояснювати складні теми просто і без зверхності.",
+                text1: "Катерина починала з нуля чотири рази, на базу пішов цілий рік, а іспит із математики вона написала на 0. Зараз цей досвід перетворився на спосіб пояснювати складні теми просто і без зверхності.",
                 text2: "Роль ментора тут не зводиться до записаних уроків. Це допомога, розбір помилок, підтримка у складних місцях і фокус на тому, щоб студент дійшов до власної роботи."
             },
             story: {
                 eyebrow: "Історія засновниці",
-                text1: "Я довго не розуміла, ким хочу бути. Після іспиту з математики в мене стояв 0, і в той момент здавалося, що жоден університет не захоче мене взяти.",
-                text2: "Я не планувала ставати айтішницею. Навпаки, мені здавалося, що це точно не моя дорога. Але життя направило мене саме туди, де я найбільше сумнівалася в собі.",
-                text3: "Коли починаєш навчання з нуля, це важко. Ти постійно губишся, кидаєш, починаєш заново і не розумієш, чи це взагалі твоє. Саме тому я побудувала Elite Code Academy так, щоб людина не просто вчилася, а могла чесно зрозуміти: їй це справді підходить чи ні.",
+                text1: "Я довго не розуміла, ким хочу бути. Іспит із математики я написала на 0, і здавалося, що жоден університет не захоче мене взяти. Я не математичний геній — і ніколи не була нею.",
+                text2: "Я не планувала ставати айтішницею. Навпаки, була впевнена, що IT — точно не моє. Але життя показало зовсім інше.",
+                text3: "Базу я вчила цілий рік: чотири рази кидала і починала заново, замість того щоб просто сісти й розібратися. Я бачила, як люди мучаться на цьому шляху, тому зібрала все воєдино. Я вірю, що послідовність і повторення — ключ до успіху.",
                 signature: "— Katya Rudenko"
             },
             cta: {
@@ -275,8 +281,14 @@ const content = {
             founder: {
                 eyebrow: "Meet the founder",
                 title: "Kateryna Rudenko",
-                lead: "I created Elite Code Academy so programming would stop feeling unreachable for people who are just starting.",
-                text: "A student here does not just watch a lesson. They write code, get feedback, move through hard parts with support, and reach a real outcome."
+                lead: "I started from zero four times. And every time, I came back.",
+                text: "I am not a math genius: I scored 0 on my math exam and no university wanted to take me. The basics took me a whole year, because I kept quitting and starting over instead of just sitting down and working through it. I did not know who I wanted to be, but I knew for sure IT was not for me. Life showed the opposite. I watched people struggle on this path, so I put everything together in one place, to make it easier for you than it was for me.",
+                f1: "times started from zero",
+                f2: "year to learn the basics",
+                f3: "points on my math exam",
+                quote: "Math does not decide who you become. The paths you see once you go around it do.",
+                quoteBy: "Kateryna Rudenko",
+                belief: "I believe consistency and repetition are the key to success."
             },
             cta: {
                 eyebrow: "Start",
@@ -373,14 +385,14 @@ const content = {
             founder: {
                 eyebrow: "Founder & Mentor",
                 lead: "The path into programming does not always begin with confidence. That is exactly why Elite Code Academy is built around support.",
-                text1: "On the current site Kateryna openly says that she once did not see herself in IT and even scored 0 on a math exam. Today that experience has become a way to explain difficult topics simply and without distance.",
+                text1: "Kateryna started from zero four times, spent a whole year on the basics, and scored 0 on her math exam. Today that experience is a way to explain difficult topics simply and without distance.",
                 text2: "The mentor role here is more than recorded lessons. It is help, feedback, support through difficult parts, and a focus on getting the student to a real piece of work."
             },
             story: {
                 eyebrow: "Story of Founder & Mentor",
-                text1: "For a long time, I did not know who I wanted to become. After my math exam, I had a 0, and at that moment it felt like no university would want to take me anywhere.",
-                text2: "I was not planning to become an IT specialist. Quite the opposite, it felt like the one path that was not meant for me. But life pushed me exactly toward the place where I doubted myself the most.",
-                text3: "When you start learning from zero, it is hard. You get lost, you quit, you begin again, and you keep wondering whether this is really for you. That is why I built Elite Code Academy in a way that helps a person not only learn, but honestly understand whether this path is truly theirs.",
+                text1: "For a long time, I did not know who I wanted to become. I scored 0 on my math exam, and it felt like no university would take me. I am not a math genius, and I never was.",
+                text2: "I was not planning to become an IT specialist. Quite the opposite, I was sure IT was not for me. But life showed me something completely different.",
+                text3: "The basics took me a whole year: I quit and started over four times instead of just sitting down and working through it. I watched people struggle on this path, so I put everything together in one place. I believe consistency and repetition are the key to success.",
                 signature: "— Katya Rudenko"
             },
             cta: {
@@ -444,10 +456,16 @@ const trustChips = {
 // Hero metrics are kept separate so the academy can update them without changing the page layout.
 const heroStats = {
     uk: [
-        { value: "100+", label: "студентів" },
-        { value: "50+", label: "проєктів" },
-        { value: "5", label: "напрямків навчання" },
+        { value: "20", label: "студентів навчалися минулого року" },
+        { value: "38", label: "модулів у двох курсах" },
+        { value: "6", label: "місяців доступу до матеріалів" },
         { value: "1:1", label: "підтримка ментора" }
+    ],
+    en: [
+        { value: "20", label: "students learned with us last year" },
+        { value: "38", label: "modules across two courses" },
+        { value: "6", label: "months of access to the materials" },
+        { value: "1:1", label: "mentor support" }
     ]
 };
 
@@ -533,16 +551,16 @@ const studentCases = {
             duration: "1 місяць",
             project: "Перша гра",
             video: "1.mp4",
-            outcome: "Першу гру створено за 1 місяць навчання.",
+            outcome: "Перша гра на Python, створена за 1 місяць навчання.",
             quote: "Перший робочий проєкт після старту з нуля."
         },
         {
             name: "Олег",
             course: "Python Foundations",
-            duration: "1 місяць",
+            duration: "",
             project: "Перша гра",
             video: "2.mp4",
-            outcome: "Створив свою гру за 4 місяці навчання.",
+            outcome: "Власна гра на Python — перший повноцінний проєкт.",
             quote: "Результат у стислі терміни через практику."
         },
         {
@@ -551,7 +569,7 @@ const studentCases = {
             duration: "3 місяці",
             project: "Гра",
             video: "3.mp4",
-            outcome: "На існуючому сайті проєкт Насті позначений як гра за 3 місяці навчання.",
+            outcome: "Гра на Python, створена за 3 місяці навчання.",
             quote: "Рух від базової логіки до завершеної роботи."
         },
         {
@@ -560,7 +578,7 @@ const studentCases = {
             duration: "5 тижнів",
             project: "Перший сайт",
             video: "99.MP4",
-            outcome: "На існуючому сайті проєкт Арсена позначений як сайт за 5 тижнів.",
+            outcome: "Перший сайт, створений за 5 тижнів навчання.",
             quote: "Перший сайт, зроблений у процесі навчання."
         }
     ],
@@ -571,16 +589,16 @@ const studentCases = {
             duration: "1 month",
             project: "First game",
             video: "1.mp4",
-            outcome: "On the current site this result is presented as a game built in 1 month.",
+            outcome: "A first Python game, built in 1 month of learning.",
             quote: "A first working project after starting from zero."
         },
         {
             name: "Oleg",
             course: "Python Foundations",
-            duration: "1 month",
+            duration: "",
             project: "First game",
             video: "2.mp4",
-            outcome: "Another Python student project that already existed on the previous site.",
+            outcome: "A Python game of his own — a first complete project.",
             quote: "A tangible result built through practice."
         },
         {
@@ -589,7 +607,7 @@ const studentCases = {
             duration: "3 months",
             project: "Game",
             video: "3.mp4",
-            outcome: "On the current site Nastya's project is shown as a game after 3 months of learning.",
+            outcome: "A Python game, built in 3 months of learning.",
             quote: "A move from basic logic to finished work."
         },
         {
@@ -598,7 +616,7 @@ const studentCases = {
             duration: "5 weeks",
             project: "First website",
             video: "99.MP4",
-            outcome: "On the current site Arsen's project is shown as a website after 5 weeks.",
+            outcome: "A first website, built in 5 weeks of learning.",
             quote: "A first website built during learning."
         }
     ]
@@ -761,6 +779,7 @@ const faqData = {
         ["Що я зможу після курсу?", "Після завершення ти матимеш базові навички Python або HTML/CSS та перші роботи для портфоліо."],
         ["Чи можна навчатися з телефону?", "Читати матеріали можна, але для практики зручніше використовувати ноутбук або ПК."],
         ["Що робити, якщо я застрягну?", "У тарифах з підтримкою можна звернутися до ментора і отримати розбір та допомогу."],
+        ["Чи можна повернути кошти?", "Так. Якщо курс не підійшов, напиши нам протягом 14 днів після оплати, і ми повернемо кошти. Для цього треба спробувати навчання: пройти перші модулі та виконати завдання. Якщо навчання не розпочато, повернення не передбачене. Кошти повертаємо тим самим способом, яким ти платив."],
         ["Як записатися на курс?", "Оберіть курс і тариф, відкрийте форму заявки та залиште свій контакт." ]
     ],
     en: [
@@ -771,6 +790,7 @@ const faqData = {
         ["What will I be able to do after the course?", "After finishing, you will have basic Python or HTML/CSS skills and first portfolio work."],
         ["Can I study from a phone?", "You can read materials from a phone, but practice is much more comfortable on a laptop or PC."],
         ["What if I get stuck?", "On supported plans you can ask the mentor for help and feedback."],
+        ["Can I get a refund?", "Yes. If the course is not right for you, contact us within 14 days of payment and we will refund you. You need to give it a try: complete the first modules and do the tasks. If you have not started learning, a refund is not available. We refund to the same payment method you used."],
         ["How do I enroll?", "Choose a course and plan, open the application form, and leave your contact details."]
     ]
 };
@@ -1108,6 +1128,8 @@ function renderJourney(rootId) {
     `).join("");
 }
 
+function posterFor(src) { return "assets/posters/" + String(src).replace(/\.mp4$/i, "") + ".jpg"; }
+
 function renderStudentCards(rootId, limit = null) {
     const root = document.getElementById(rootId);
     if (!root) return;
@@ -1115,7 +1137,7 @@ function renderStudentCards(rootId, limit = null) {
     root.innerHTML = cases.map(student => `
         <article class="student-card reveal">
             <button class="student-visual student-visual-button js-open-video" type="button" data-video-src="${student.video}" data-video-title="${student.project}" aria-label="${t("videoModal.playLabel")}">
-                <video class="student-video js-student-video" muted playsinline loop preload="none" poster="">
+                <video class="student-video js-student-video" muted playsinline loop preload="none" poster="${posterFor(student.video)}">
                     <source src="${student.video}" type="video/mp4">
                 </video>
                 <span>${student.project}</span>
@@ -1123,7 +1145,7 @@ function renderStudentCards(rootId, limit = null) {
             <div class="student-meta">
                 <span>${student.name}</span>
                 <span>${student.course}</span>
-                <span>${student.duration}</span>
+                ${student.duration ? `<span>${student.duration}</span>` : ""}
             </div>
             <p>${student.outcome}</p>
             <div class="student-quote">${student.quote}</div>
@@ -1191,6 +1213,7 @@ function bindVideoModal() {
             const heading = button.dataset.videoTitle || "";
             if (!src) return;
             title.textContent = heading;
+            player.dataset.src = src;
             player.src = src;
             modal.classList.add("is-open");
             modal.setAttribute("aria-hidden", "false");
@@ -1218,7 +1241,7 @@ function renderTestimonials(rootId, count = 3) {
     root.innerHTML = testimonials[currentLang].slice(0, count).map(item => `
         <article class="testimonial-card reveal">
             <p>${item.text}</p>
-            <footer>— ${item.author}</footer>
+            <footer><span class="t-avatar" aria-hidden="true">${String(item.author).charAt(0)}</span><b>${item.author}</b><small>Elite Code Academy</small></footer>
         </article>
     `).join("");
 }
@@ -1424,7 +1447,7 @@ function renderPage() {
     renderJourney("about-journey");
     renderStudentCards("home-students-grid", 4);
     renderStudentCards("students-page-grid");
-    renderTestimonials("testimonial-track", 3);
+    renderTestimonials("testimonial-track", 6);
     renderQuotes();
     renderFeedbackNotes();
     renderCurriculum("python-curriculum", "python");
@@ -1444,3 +1467,199 @@ function renderPage() {
 }
 
 document.addEventListener("DOMContentLoaded", renderPage);
+
+/* ===== Motion layer ===== */
+(function motionLayer(){
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const run = () => {
+        document.body.classList.add("motion-on");
+        // scroll progress
+        const bar = document.createElement("div");
+        bar.className = "scroll-progress";
+        document.body.appendChild(bar);
+        const onScroll = () => {
+            const h = document.documentElement.scrollHeight - innerHeight;
+            bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+        };
+        addEventListener("scroll", onScroll, { passive: true }); onScroll();
+        // stagger siblings
+        document.querySelectorAll(".reveal").forEach(el => {
+            const sibs = [...el.parentElement.children].filter(c => c.classList.contains("reveal"));
+            el.style.setProperty("--stagger", Math.min(sibs.indexOf(el), 6) * 90 + "ms");
+        });
+        // headings reveal
+        const heads = document.querySelectorAll(".section-head,.section > .container > h2,.section > .container > .eyebrow");
+        const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: .2 });
+        heads.forEach(h => io.observe(h));
+        // count-up
+        const counted = new WeakSet();
+        const count = el => {
+            const m = el.textContent.trim().match(/^(\d+)(.*)$/);
+            if (!m || counted.has(el)) return; counted.add(el);
+            const end = +m[1], rest = m[2], t0 = performance.now(), dur = 1400;
+            const tick = t => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(end * e) + rest; if (p < 1) requestAnimationFrame(tick); };
+            requestAnimationFrame(tick);
+        };
+        const cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { count(e.target); cio.unobserve(e.target); } }), { threshold: .6 });
+        document.querySelectorAll(".hero-stat strong").forEach(s => cio.observe(s));
+        // hero tilt follows cursor
+        const stage = document.getElementById("hero-stage");
+        if (stage && matchMedia("(hover:hover)").matches) {
+            stage.addEventListener("mousemove", e => { const r = stage.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+                stage.style.transform = "perspective(900px) rotateY(" + x * 6 + "deg) rotateX(" + -y * 6 + "deg)"; });
+            stage.addEventListener("mouseleave", () => { stage.style.transform = ""; });
+        }
+    };
+    document.addEventListener("DOMContentLoaded", () => setTimeout(run, 0));
+})();
+
+/* ===== Hero story ===== */
+(function heroStory(){
+    const root = document.getElementById("hero-story");
+    if (!root) return;
+    const code = document.getElementById("hs-code"), prev = document.getElementById("hs-preview");
+    const S = [ // [class, text, mark]
+        ["c","<!-- твій перший сайт -->\n"],["t","<section>\n"],
+        ["t","  <h1>"],["","Кава & Крафт"],["t","</h1>","h"],["","\n"],
+        ["t","  <p>"],["","Свіжа обсмажка щодня"],["t","</p>","p"],["","\n"],
+        ["t","  <button>"],["","Замовити"],["t","</button>","b"],["","\n"],
+        ["t","</section>\n\n"],
+        ["p","section "],["","{\n"],
+        ["a","  display"],["",": "],["s","grid"],["",";\n"],
+        ["a","  place-items"],["",": "],["s","center"],["",";\n"],
+        ["a","  background"],["",": "],["s","#1c1410"],["",";\n"],
+        ["","}","styled"]
+    ];
+    const total = S.reduce((n,x)=>n+x[1].length,0);
+    const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    function render(n){
+        let left=n, html="", marks=[];
+        for (const [c,t,m] of S){
+            if (left<=0) break;
+            const part=t.slice(0,left); left-=t.length;
+            html+= c? `<span class="${c}">${esc(part)}</span>` : esc(part);
+            if (m && left>=0) marks.push(m);
+        }
+        code.innerHTML = html+'<span class="cur"></span>';
+        prev.classList.toggle("s-h",marks.includes("h"));
+        prev.classList.toggle("s-p",marks.includes("p"));
+        prev.classList.toggle("s-b",marks.includes("b"));
+        prev.classList.toggle("styled",marks.includes("styled"));
+    }
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce){ render(total); }
+    else {
+        let n=0, last=0, hold=0, visible=true;
+        new IntersectionObserver(e=>{visible=e[0].isIntersecting;}).observe(root);
+        const step=t=>{
+            if (visible && t-last>38){ last=t;
+                if (n<total){ n++; render(n); hold=0; }
+                else if (++hold>70){ n=0; render(0); }
+            }
+            requestAnimationFrame(step);
+        };
+        render(0); requestAnimationFrame(step);
+    }
+    if (reduce) return;
+    root.classList.add("is-story");
+    const lines=[...root.querySelectorAll(".hs-line")], fin=root.querySelector(".hs-final"),
+          win=document.getElementById("hs-window"), hint=root.querySelector(".hs-hint");
+    const r=(p,a,b)=>Math.max(0,Math.min(1,(p-a)/(b-a))), ease=x=>x*x*(3-2*x);
+    let ticking=false;
+    function update(){
+        ticking=false;
+        const rect=root.getBoundingClientRect(), span=root.offsetHeight-innerHeight;
+        const p=Math.max(0,Math.min(1,-rect.top/span));
+        // line 0: visible at once, leaves
+        const o0=1-ease(r(p,.14,.26));
+        lines[0].style.opacity=o0; lines[0].style.transform=`translate(-50%,calc(-50% - ${ease(r(p,.14,.26))*60}px)) scale(${1+r(p,0,.26)*.06})`; lines[0].style.filter=`blur(${ease(r(p,.16,.26))*14}px)`;
+        const in1=ease(r(p,.27,.37)), out1=ease(r(p,.52,.62));
+        lines[1].style.opacity=in1*(1-out1); lines[1].style.transform=`translate(-50%,calc(-50% + ${(1-in1)*50 - out1*60}px)) scale(${.96+in1*.04})`; lines[1].style.filter=`blur(${(1-in1)*14 + out1*14}px)`;
+        const f=ease(r(p,.64,.8));
+        fin.style.opacity=f; fin.style.transform=`translateY(${(1-f)*40}px)`; fin.style.pointerEvents=f>.6?"auto":"none"; fin.style.visibility=f<.01?"hidden":"visible";
+        // window: dim & centered early, docks below the text later
+        const w=ease(r(p,.56,.84));
+        const wh=win.offsetHeight, free=innerHeight/2-win.offsetTop-wh/2;
+        win.style.opacity=.1+.9*w;
+        win.style.transform=`translateY(${(1-w)*Math.max(0,free)}px) scale(${.9+.1*w})`;
+        win.style.filter=`blur(${(1-w)*3}px)`;
+        hint.style.opacity=1-r(p,0,.08);
+    }
+    const req=()=>{ if(!ticking){ticking=true;requestAnimationFrame(update);} };
+    addEventListener("scroll",req,{passive:true}); addEventListener("resize",req); update();
+})();
+
+/* ===== Statement interludes ===== */
+(function statements(){
+    const secs=[...document.querySelectorAll(".statement")];
+    if(!secs.length) return;
+    const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    secs.forEach(sec=>{
+        const p=sec.querySelector(".st-text");
+        const wrap=(node)=>{[...node.childNodes].forEach(n=>{
+            if(n.nodeType===3){const f=document.createDocumentFragment();
+                n.textContent.split(/(\s+)/).forEach(t=>{ if(!t) return; if(/^\s+$/.test(t)) f.appendChild(document.createTextNode(t)); else {const s=document.createElement("span");s.className="w";s.textContent=t;f.appendChild(s);} });
+                n.replaceWith(f);} else if(n.nodeType===1) wrap(n); });};
+        wrap(p);
+        sec._w=[...p.querySelectorAll(".w")];
+        if(!reduce) sec.classList.add("is-story");
+    });
+    if(reduce) return;
+    let t=false;
+    const upd=()=>{ t=false;
+        secs.forEach(sec=>{
+            const r=sec.getBoundingClientRect(), span=sec.offsetHeight-innerHeight;
+            const p=Math.max(0,Math.min(1,(-r.top+innerHeight*.15)/(span*.8)));
+            const n=sec._w.length;
+            sec._w.forEach((w,i)=>{ const k=Math.max(0,Math.min(1,p*n*1.15-i)); w.style.opacity=.14+.86*k; w.style.filter=`blur(${(1-k)*3}px)`; });
+        });
+    };
+    const req=()=>{ if(!t){t=true;requestAnimationFrame(upd);} };
+    addEventListener("scroll",req,{passive:true}); addEventListener("resize",req); upd();
+})();
+
+
+/* ===== Inner hero ===== */
+document.addEventListener("DOMContentLoaded",()=>setTimeout(()=>{
+    const hero=document.querySelector(".inner-hero"); if(!hero) return;
+    const h=hero.querySelector("h1"); if(h && !h.querySelector(".ih-word")){
+        const words=h.textContent.trim().split(/\s+/); h.textContent="";
+        words.forEach((w,i)=>{const s=document.createElement("span");s.className="ih-word"+(i>=words.length-2?" gold":"");s.style.setProperty("--i",i);s.textContent=w;h.appendChild(s);h.appendChild(document.createTextNode(" "));});
+    }
+    const bits=document.createElement("div");bits.className="ih-bits";bits.setAttribute("aria-hidden","true");
+    [["{ }","8%","24%"],["</>","86%","30%"],["def","14%","72%"],["print()","78%","76%"],["#","50%","12%"],["=>","92%","58%"]].forEach(([t,x,y],i)=>{const s=document.createElement("span");s.textContent=t;s.style.left=x;s.style.top=y;s.style.setProperty("--d",(-i*1.7)+"s");bits.appendChild(s);});
+    hero.prepend(bits);
+},0));
+
+
+/* ===== Video fallback (blob/data) for restrictive hosts ===== */
+function attachVideoFallback(video, getSrc, onReady) {
+    let stage = 0;
+    const fail = () => {
+        const src = getSrc(); if (!src || stage >= 2) return;
+        stage++;
+        fetch(src).then(r => r.blob()).then(blob => {
+            if (stage === 1) { video.src = URL.createObjectURL(blob); video.load(); onReady && onReady(); }
+            else { const fr = new FileReader(); fr.onload = () => { video.src = fr.result; video.load(); onReady && onReady(); }; fr.readAsDataURL(blob); }
+        }).catch(() => {});
+    };
+    video.addEventListener("error", fail);
+    video.querySelectorAll("source").forEach(s => s.addEventListener("error", fail));
+    document.addEventListener("securitypolicyviolation", e => {
+        const src = getSrc();
+        if (src && e.blockedURI && e.blockedURI.indexOf(src) !== -1) fail();
+    });
+    [600, 2000].forEach(ms => setTimeout(() => { if (video.networkState === 3 && !video.src.startsWith("blob:") && !video.src.startsWith("data:")) fail(); }, ms));
+}
+document.addEventListener("DOMContentLoaded", () => setTimeout(() => {
+    document.querySelectorAll(".js-student-video").forEach(v => {
+        const s = v.querySelector("source");
+        const hoverPlay = () => { v.muted = true; const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); };
+        v.preload = "metadata";
+        attachVideoFallback(v, () => s && s.getAttribute("src"), () => { if (v.closest(".student-card:hover")) hoverPlay(); });
+    });
+    const player = document.getElementById("student-video-player");
+    if (player) attachVideoFallback(player, () => player.dataset.src, () => { const pr = player.play(); if (pr && pr.catch) pr.catch(() => {}); });
+}, 50));

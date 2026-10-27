@@ -46,34 +46,38 @@
     <div class="site-shell">
         <div id="site-nav"></div>
         <main>
-            <section class="section hero-section hero-v3">
-                <div class="hero-atmosphere" aria-hidden="true">
-                    <span class="hero-orbit hero-orbit-one"></span>
-                    <span class="hero-orbit hero-orbit-two"></span>
-                </div>
-                <div class="container hero-layout">
-                    <div class="hero-copy reveal">
-                        <h1 class="display-title">Створи свою першу гру або сайт — вже в перший місяць.</h1>
-                        <p class="hero-text">Без досвіду і «складної теорії». Практика з першого уроку, ментор перевіряє кожне завдання, а в кінці — готовий проєкт у портфоліо.</p>
-                        <ul class="hero-checks">
-                            <li>Ментор перевіряє домашні завдання та дає фідбек</li>
-                            <li>Модулі, відео й практика — вчишся у своєму темпі</li>
-                            <li>Сертифікат після курсу і 6 місяців доступу</li>
-                        </ul>
-                        <div class="hero-actions">
+            <section class="hero-story" id="hero-story" aria-label="Elite Code Academy">
+                <div class="hs-sticky">
+                    <div class="hs-glow" aria-hidden="true"></div>
+                    <div class="hs-lines" aria-hidden="true">
+                        <p class="hs-line" data-i="0">Ніколи не писав код?</p>
+                        <p class="hs-line" data-i="1">Тоді почни <em>правильно.</em></p>
+                    </div>
+                    <div class="hs-final">
+                        <p class="hs-eyebrow">Python · HTML/CSS · з нуля</p>
+                        <h1 class="hs-title">Створи свою першу гру або сайт — вже в перший місяць.</h1>
+                        <p class="hs-sub">Практика з першого уроку. Ментор перевіряє кожне завдання, а в кінці — проєкт у твоєму портфоліо.</p>
+                        <div class="hs-actions">
                             <a class="btn btn-primary" href="courses.html#courses">Обрати курс</a>
-                            <a class="btn btn-secondary" href="students.html">Дивитись проєкти студентів</a>
+                            <a class="btn btn-secondary" href="students.html">Проєкти студентів</a>
                         </div>
-                        <p class="hero-price"><span>від <b>1300 грн</b></span><em>Набір у потік листопада — до 30 листопада</em></p>
+                        <p class="hs-price">від <b>1300 грн</b> · <b>14 днів</b> на повернення коштів</p>
                         <div class="trust-chips" id="hero-chips" hidden></div>
                     </div>
-                    <div class="hero-proof reveal" id="hero-stage">
-                        <p class="pf-label">Приклад сайту, який ти зробиш на курсі Frontend</p>
-                        <a class="pf-browser" href="students.html" aria-label="Подивитись результати студентів">
-                            <span class="pf-bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                            <img src="assets/site-example.webp" width="1280" height="760" alt="Приклад навчального сайту кав'ярні, створеного на курсі Frontend Foundations" fetchpriority="high">
-                        </a>
+                    <div class="hs-window" id="hs-window" aria-hidden="true">
+                        <div class="hs-bar"><i></i><i></i><i></i><span>index.html — style.css</span></div>
+                        <div class="hs-body">
+                            <pre class="hs-code" id="hs-code"></pre>
+                            <div class="hs-preview" id="hs-preview">
+                                <div class="hsp-page">
+                                    <h4 class="hsp-h">Кава &amp; Крафт</h4>
+                                    <p class="hsp-p">Свіжа обсмажка щодня</p>
+                                    <span class="hsp-b">Замовити</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="hs-hint" aria-hidden="true"><span></span>Гортай</div>
                 </div>
             </section>
 
@@ -81,6 +85,10 @@
                 <div class="container">
                     <div class="hero-stats" id="hero-stats"></div>
                 </div>
+            </section>
+
+            <section class="statement" aria-label="Код — це не магія. <em>Це навичка,</em> яку реально вивчити з нуля.">
+                <div class="st-sticky"><p class="st-text" data-st>Код — це не магія. <em>Це навичка,</em> яку реально вивчити з нуля.</p></div>
             </section>
 
             <section class="section audience">
@@ -166,8 +174,8 @@
                 <div class="container">
                     <div class="section-heading reveal">
                         <p class="eyebrow">Платформа · 2027</p>
-                        <h2>Власна платформа вже в розробці.</h2>
-                        <p>Зараз навчання проходить у Notion: модулі, відео й завдання зібрані в одному місці, а перевірка домашніх завдань і зв’язок з ментором — у Telegram. У 2027 ми запускаємо власну платформу з особистим кабінетом і прогресом навчання — студенти, які вчаться зараз, отримають доступ до неї безкоштовно.</p>
+                        <h2>Першу версію платформи вже зібрано.</h2>
+                        <p>Перший курс — 23 модулі Python — уже перенесено на власну платформу, з практичними завданнями після уроків. Відкриття для студентів — у 2027 році. Поки що навчання проходить у Notion, а перевірка домашніх завдань і зв’язок з ментором — у Telegram. Ті, хто вчиться зараз, отримають доступ до платформи безкоштовно.</p>
                     </div>
                     <figure class="pf-browser platform-shot reveal">
                         <div class="pf-bar"><i></i><i></i><i></i></div>
@@ -213,12 +221,33 @@
                 </div>
             </section>
 
+            <section class="section reassure-section">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <p class="eyebrow">Без паніки</p>
+                        <h2>А якщо не підійде або я не встигаю?</h2>
+                        <p>Це головні страхи перед стартом. Ось як ми з ними працюємо.</p>
+                    </div>
+                    <div class="reassure-grid">
+                        <article class="reassure-card reveal"><span class="reassure-num">24/7</span><h3>Навчайся, коли зручно</h3><p>Ти проходиш курс у власному темпі: модулі, відео й завдання завжди під рукою, і до складних тем можна повертатися скільки потрібно.</p></article>
+                        <article class="reassure-card reveal"><span class="reassure-num">6</span><h3>місяців доступу</h3><p>Матеріали відкриті пів року — достатньо часу, щоб пройти курс без поспіху і закріпити практику.</p></article>
+                        <article class="reassure-card reassure-card--guarantee reveal"><span class="reassure-num">14</span><h3>днів на повернення коштів</h3><p>Якщо курс не підійшов, повернемо кошти протягом 14 днів після оплати. Умови — в питаннях нижче.</p></article>
+                        <article class="reassure-card reveal"><span class="reassure-num">1:1</span><h3>Є кому запитати</h3><p>У форматах з підтримкою ментор перевіряє завдання, пояснює помилки й допомагає з фінальним проєктом.</p></article>
+                    </div>
+                    <div class="center-cta reveal"><button class="btn btn-secondary js-open-application" type="button">Не впевнений, чи підійде? Напиши нам</button></div>
+                </div>
+            </section>
+
+            <section class="statement" aria-label="Теорію забувають. <em>Проєкти — ні.</em>">
+                <div class="st-sticky"><p class="st-text" data-st>Теорію забувають. <em>Проєкти — ні.</em></p></div>
+            </section>
+
             <section class="section">
                 <div class="container">
                     <div class="section-heading reveal">
                         <p class="eyebrow" data-i18n="home.students.eyebrow">Результати</p>
                         <h2 data-i18n="home.students.title">Вони теж починали з нуля.</h2>
-                        <p>Наведи курсор на проєкт, щоб побачити його в дії, або натисни, щоб відкрити відео.</p>
+                        <p>Це проєкти наших студентів. Наведи курсор, щоб побачити їх у дії, або натисни, щоб відкрити відео.</p>
                     </div>
                     <div class="student-grid" id="home-students-grid"></div>
                     <div class="center-cta reveal">
@@ -239,12 +268,16 @@
                 </div>
             </section>
 
+            <section class="statement" aria-label="Ти не просто дивишся уроки. <em>Ти пишеш код</em> і робиш власний проєкт.">
+                <div class="st-sticky"><p class="st-text" data-st>Ти не просто дивишся уроки. <em>Ти пишеш код</em> і робиш власний проєкт.</p></div>
+            </section>
+
             <section class="section pricing-home" id="pricing">
                 <div class="container">
                     <div class="section-heading reveal">
                         <p class="eyebrow">Тарифи</p>
                         <h2>Обери формат, який тобі підходить.</h2>
-                        <p>Два курси, дві форми підтримки. Доступ до матеріалів на 6 місяців у кожному тарифі.</p>
+                        <p>Два курси, дві форми підтримки. Доступ до матеріалів на 6 місяців у кожному тарифі. Якщо курс не сподобався, повернемо кошти протягом 14 днів.</p>
                     </div>
                     <div class="tabs reveal" role="tablist" aria-label="Курс">
                         <button type="button" role="tab" id="tab-python" aria-selected="true" aria-controls="home-pricing" data-course="python">Python Foundations</button>
@@ -257,13 +290,16 @@
             <section class="section section--tint">
                 <div class="container founder-preview reveal">
                     <div class="founder-photo-frame">
-                        <img src="Katya.jpeg" alt="Катерина Руденко, засновниця Elite Code Academy" width="723" height="1280" loading="lazy">
+                        <img src="Katya.jpeg" alt="Катерина Руденко, засновниця Elite Code Academy" width="726" height="1280" loading="lazy">
                     </div>
                     <div class="founder-copy">
                         <p class="eyebrow" data-i18n="home.founder.eyebrow">Засновниця академії</p>
                         <h2 data-i18n="home.founder.title">Катерина Руденко</h2>
-                        <p class="lead" data-i18n="home.founder.lead">Я створила Elite Code Academy, щоб програмування перестало здаватися чимось недосяжним для тих, хто лише починає.</p>
-                        <p data-i18n="home.founder.text">Тут студент не просто дивиться урок. Він пише код, отримує фідбек, проходить через труднощі з підтримкою і доходить до власного результату.</p>
+                        <p class="lead" data-i18n="home.founder.lead">Я починала з нуля чотири рази. І щоразу поверталась.</p>
+                        <p data-i18n="home.founder.text">Я не математичний геній: іспит із математики я написала на 0, і жоден університет не хотів мене брати. На базу пішов цілий рік, бо я кидала і починала заново.</p>
+                        <ul class="founder-facts"><li><b>4</b><span data-i18n="home.founder.f1">рази починала з нуля</span></li><li><b>1</b><span data-i18n="home.founder.f2">рік пішов на базу</span></li><li><b>0</b><span data-i18n="home.founder.f3">бал за іспит з математики</span></li></ul>
+                        <blockquote class="founder-quote"><p data-i18n="home.founder.quote">Не математика вирішує, ким ти станеш. Вирішують шляхи, які ти побачиш, коли її обійдеш.</p><cite data-i18n="home.founder.quoteBy">Катерина Руденко</cite></blockquote>
+                        <p class="founder-belief" data-i18n="home.founder.belief">Я вірю, що послідовність і повторення — ключ до успіху.</p>
                         <div class="founder-actions"><a class="btn btn-primary" href="courses.html#courses">Обрати курс</a><a class="btn btn-secondary" href="about.html" data-i18n="actions.aboutAcademy">Про Elite Code Academy</a></div>
                     </div>
                 </div>
@@ -286,7 +322,7 @@
                             <p class="eyebrow" data-i18n="home.cta.eyebrow">Старт</p>
                             <h2 data-i18n="home.cta.title">Твій перший проєкт може початися сьогодні.</h2>
                             <p data-i18n="home.cta.text">Обери напрямок і зроби перший крок у програмуванні.</p>
-                            <ul class="cta-perks"><li>Набір у потік листопада — до 30.11</li><li>6 місяців доступу</li><li>Сертифікат після курсу</li></ul>
+                            <ul class="cta-perks"><li>14 днів на повернення коштів</li><li>6 місяців доступу</li><li>Сертифікат після курсу</li></ul>
                         </div>
                         <div class="cta-band-actions">
                             <a class="btn btn-primary" href="courses.html#courses" data-i18n="actions.chooseCourse">Обрати курс</a>
