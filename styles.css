@@ -2507,3 +2507,6 @@ main > .section:nth-of-type(even) {
 .nav-actions .btn{min-height:42px;padding:.55rem 1.15rem;font-size:.92rem}
 .motion-on .btn::after,.motion-on .button::after,.motion-on a.primary::after,.motion-on [class*="btn-primary"]::after{display:none}
 .hs-actions .btn{min-width:170px}
+
+.hs-title{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:var(--text)!important;-webkit-text-fill-color:currentColor}
+.hs-title .hs-gold{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
