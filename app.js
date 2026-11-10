@@ -706,7 +706,7 @@ const pricing = {
                 id: "full",
                 name: "Full Support",
                 fullPrice: "7000 грн",
-                price: "3500 грн",
+                price: "5000 грн",
                 recommended: true,
                 features: ["23 модулі", "Плановані онлайн-зустрічі", "Детальна перевірка домашніх завдань", "Допомога з фінальним проєктом", "Сертифікат", "6 місяців доступу до курсу"]
             }
@@ -724,7 +724,7 @@ const pricing = {
                 id: "full",
                 name: "Full Support",
                 fullPrice: "138 EUR",
-                price: "69 EUR",
+                price: "99 EUR",
                 recommended: true,
                 features: ["23 modules", "Scheduled online meetings", "Detailed homework review", "Final project support", "Certificate", "6 months of access"]
             }
@@ -744,7 +744,7 @@ const pricing = {
                 id: "pro",
                 name: "Pro Support",
                 fullPrice: "5800 грн",
-                price: "2900 грн",
+                price: "4000 грн",
                 recommended: true,
                 features: ["15 модулів", "Заплановані онлайн-зустрічі", "Розбір твого коду ментором", "Сертифікат", "6 місяців доступу до курсу"]
             }
@@ -762,7 +762,7 @@ const pricing = {
                 id: "pro",
                 name: "Pro Support",
                 fullPrice: "114 EUR",
-                price: "57 EUR",
+                price: "79 EUR",
                 recommended: true,
                 features: ["15 modules", "Scheduled online meetings", "Code review by mentor", "Certificate", "6 months of access"]
             }
