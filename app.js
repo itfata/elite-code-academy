@@ -1054,7 +1054,13 @@ function renderTranslatedText() {
     document.documentElement.lang = currentLang;
     document.querySelectorAll("[data-i18n]").forEach(element => {
         const value = t(element.dataset.i18n);
-        if (value) element.textContent = value;
+        if (!value) return;
+        if (value.includes("*")) {
+            const safe = value.replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+            element.innerHTML = safe.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+        } else {
+            element.textContent = value;
+        }
     });
 }
 
@@ -1528,47 +1534,160 @@ document.addEventListener("DOMContentLoaded", renderPage);
     const root = document.getElementById("hero-story");
     if (!root) return;
     const code = document.getElementById("hs-code"), prev = document.getElementById("hs-preview");
-    const S = [ // [class, text, mark]
-        ["c","<!-- твій перший сайт -->\n"],["t","<section>\n"],
-        ["t","  <h1>"],["","Кава & Крафт"],["t","</h1>","h"],["","\n"],
-        ["t","  <p>"],["","Свіжа обсмажка щодня"],["t","</p>","p"],["","\n"],
-        ["t","  <button>"],["","Замовити"],["t","</button>","b"],["","\n"],
-        ["t","</section>\n\n"],
-        ["p","section "],["","{\n"],
-        ["a","  display"],["",": "],["s","grid"],["",";\n"],
-        ["a","  place-items"],["",": "],["s","center"],["",";\n"],
-        ["a","  background"],["",": "],["s","#1c1410"],["",";\n"],
-        ["","}","styled"]
+    const barLabel = document.querySelector("#hs-window .hs-bar span");
+    const game = prev.querySelector(".hsp-game");
+    const canvas = game ? game.querySelector("canvas") : null;
+    const scoreEl = game ? game.querySelector(".hsp-score b") : null;
+
+    /* Two demos in a row: Python game, then HTML/CSS site. [class, text, mark] */
+    const DEMOS = [
+        {
+            label: "приклад першої гри · game.py",
+            mode: "game",
+            S: [
+                ["c","# твоя перша гра на Python\n"],["p","import "],["","pygame\n\n"],
+                ["","player = "],["a","Player"],["","(x="],["s","40"],["",", y="],["s","120"],["",")\n","pl"],
+                ["","coins = "],["a","spawn_coins"],["","("],["s","4"],["",")\n","co"],
+                ["","score = "],["s","0"],["","\n\n"],
+                ["p","while "],["","running:\n","run"],
+                ["","    player."],["a","move"],["","(keys)\n"],
+                ["p","    for "],["","coin "],["p","in "],["","coins:\n"],
+                ["p","        if "],["","player."],["a","catches"],["","(coin):\n"],
+                ["","            score += "],["s","1"]
+            ]
+        },
+        {
+            label: "приклад першого сайту · index.html",
+            mode: "site",
+            S: [
+                ["c","<!-- твій перший сайт -->\n"],["t","<section>\n"],
+                ["t","  <h1>"],["","Кава & Крафт"],["t","</h1>","h"],["","\n"],
+                ["t","  <p>"],["","Свіжа обсмажка щодня"],["t","</p>","p"],["","\n"],
+                ["t","  <button>"],["","Замовити"],["t","</button>","b"],["","\n"],
+                ["t","</section>\n\n"],
+                ["p","section "],["","{\n"],
+                ["a","  display"],["",": "],["s","grid"],["",";\n"],
+                ["a","  place-items"],["",": "],["s","center"],["",";\n"],
+                ["a","  background"],["",": "],["s","#1c1410"],["",";\n"],
+                ["","}","styled"]
+            ]
+        }
     ];
-    const total = S.reduce((n,x)=>n+x[1].length,0);
+    DEMOS.forEach(d => { d.total = d.S.reduce((n,x)=>n+x[1].length,0); });
     const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+    /* ---- Mini game: a gold circle that catches coins ---- */
+    const G = { on:false, w:0, h:0, px:0.2, py:0.5, coins:[], score:0, ctx:null, dpr:1 };
+    function sizeCanvas(){
+        if (!canvas) return;
+        const r = canvas.getBoundingClientRect();
+        G.dpr = Math.min(2, window.devicePixelRatio || 1);
+        G.w = Math.max(1, r.width); G.h = Math.max(1, r.height);
+        canvas.width = G.w * G.dpr; canvas.height = G.h * G.dpr;
+        G.ctx = canvas.getContext("2d"); G.ctx.setTransform(G.dpr,0,0,G.dpr,0,0);
+    }
+    const rnd = (a,b) => a + Math.random()*(b-a);
+    function newCoin(){ return { x:rnd(0.15,0.85), y:rnd(0.28,0.75), t:Math.random()*6 }; }
+    function resetGame(n){ G.px=0.2; G.py=0.55; G.score=0; G.coins=[]; for(let i=0;i<n;i++) G.coins.push(newCoin()); if (scoreEl) scoreEl.textContent="0"; }
+    const BURSTS = [];
+    function drawGame(dt){
+        const c=G.ctx; if(!c) return;
+        const u = Math.max(0.75, Math.min(1.4, G.h / 300)); // scale with the preview size
+        c.clearRect(0,0,G.w,G.h);
+        // soft floor grid
+        c.strokeStyle="rgba(212,175,95,0.05)"; c.lineWidth=1;
+        for(let x=0;x<G.w;x+=36){ c.beginPath(); c.moveTo(x,0); c.lineTo(x,G.h); c.stroke(); }
+        for(let y=0;y<G.h;y+=36){ c.beginPath(); c.moveTo(0,y); c.lineTo(G.w,y); c.stroke(); }
+        const showPlayer = prev.classList.contains("g-pl"), showCoins = prev.classList.contains("g-co");
+        if (showCoins) G.coins.forEach(k => {
+            k.t += dt*3;
+            const x=k.x*G.w, y=k.y*G.h + Math.sin(k.t)*4*u, r=11*u;
+            const glow=c.createRadialGradient(x,y,r*0.4,x,y,r*2.6); glow.addColorStop(0,"rgba(239,213,146,0.45)"); glow.addColorStop(1,"rgba(239,213,146,0)");
+            c.fillStyle=glow; c.beginPath(); c.arc(x,y,r*2.6,0,Math.PI*2); c.fill();
+            const body=c.createLinearGradient(x,y-r,x,y+r); body.addColorStop(0,"#f6df9f"); body.addColorStop(1,"#c39a45");
+            c.fillStyle=body; c.beginPath(); c.arc(x,y,r,0,Math.PI*2); c.fill();
+            c.strokeStyle="rgba(18,14,7,0.55)"; c.lineWidth=2*u; c.beginPath(); c.arc(x,y,r*0.62,0,Math.PI*2); c.stroke();
+            c.fillStyle="rgba(255,255,255,0.7)"; c.beginPath(); c.arc(x-r*0.35,y-r*0.4,r*0.18,0,Math.PI*2); c.fill();
+        });
+        if (G.on && G.coins.length){
+            let best=null, bd=1e9;
+            G.coins.forEach(k => { const d=Math.hypot(k.x-G.px,(k.y-G.py)*G.h/G.w); if(d<bd){bd=d;best=k;} });
+            const sp = Math.min(1, dt*3.4);
+            G.px += (best.x-G.px)*sp; G.py += (best.y-G.py)*sp;
+            if (Math.hypot((best.x-G.px)*G.w,(best.y-G.py)*G.h) < 16*u){
+                G.score++; if (scoreEl) scoreEl.textContent=String(G.score);
+                BURSTS.push({ x:best.x*G.w, y:best.y*G.h, t:0 });
+                Object.assign(best, newCoin());
+            }
+        }
+        for (let i=BURSTS.length-1;i>=0;i--){
+            const b=BURSTS[i]; b.t+=dt; const k=b.t/0.7;
+            if (k>=1){ BURSTS.splice(i,1); continue; }
+            c.strokeStyle=`rgba(239,213,146,${1-k})`; c.lineWidth=2*u;
+            c.beginPath(); c.arc(b.x,b.y,(12+34*k)*u,0,Math.PI*2); c.stroke();
+            c.fillStyle=`rgba(246,223,159,${1-k})`; c.font=`italic ${Math.round(22*u)}px "Instrument Serif", Georgia, serif`; c.textAlign="center";
+            c.fillText("+1", b.x, b.y-(18+26*k)*u);
+        }
+        if (showPlayer){
+            const x=G.px*G.w, y=G.py*G.h, r=18*u;
+            const g=c.createRadialGradient(x,y,r*0.3,x,y,r*3); g.addColorStop(0,"rgba(245,239,224,0.5)"); g.addColorStop(1,"rgba(245,239,224,0)");
+            c.fillStyle=g; c.beginPath(); c.arc(x,y,r*3,0,Math.PI*2); c.fill();
+            c.fillStyle="#f5efe0"; c.beginPath(); c.arc(x,y,r,0,Math.PI*2); c.fill();
+            c.strokeStyle="#d4af5f"; c.lineWidth=3*u; c.beginPath(); c.arc(x,y,r,0,Math.PI*2); c.stroke();
+            // eyes, so it reads as a game character
+            c.fillStyle="#120e07";
+            c.beginPath(); c.arc(x-r*0.32,y-r*0.15,r*0.13,0,Math.PI*2); c.fill();
+            c.beginPath(); c.arc(x+r*0.32,y-r*0.15,r*0.13,0,Math.PI*2); c.fill();
+        }
+    }
+
+    let demo = 0;
     function render(n){
+        const D = DEMOS[demo];
         let left=n, html="", marks=[];
-        for (const [c,t,m] of S){
+        for (const [c,t,m] of D.S){
             if (left<=0) break;
             const part=t.slice(0,left); left-=t.length;
             html+= c? `<span class="${c}">${esc(part)}</span>` : esc(part);
             if (m && left>=0) marks.push(m);
         }
         code.innerHTML = html+'<span class="cur"></span>';
+        code.scrollTop = code.scrollHeight;
+        prev.classList.toggle("mode-game", D.mode==="game");
+        prev.classList.toggle("mode-site", D.mode==="site");
+        prev.classList.toggle("g-pl",marks.includes("pl"));
+        prev.classList.toggle("g-co",marks.includes("co"));
+        G.on = marks.includes("run");
+        prev.classList.toggle("g-run",G.on);
         prev.classList.toggle("s-h",marks.includes("h"));
         prev.classList.toggle("s-p",marks.includes("p"));
         prev.classList.toggle("s-b",marks.includes("b"));
         prev.classList.toggle("styled",marks.includes("styled"));
     }
+    function startDemo(i){
+        demo = i;
+        if (barLabel) barLabel.textContent = DEMOS[i].label;
+        if (DEMOS[i].mode==="game"){ sizeCanvas(); resetGame(5); }
+    }
+    window.addEventListener("resize", () => { if (DEMOS[demo].mode==="game") sizeCanvas(); });
+
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce){ render(total); }
+    if (reduce){ startDemo(1); render(DEMOS[1].total); }
     else {
-        let n=0, last=0, hold=0, visible=true;
+        let n=0, last=0, hold=0, visible=true, prevT=0;
         new IntersectionObserver(e=>{visible=e[0].isIntersecting;}).observe(root);
+        const HOLD = { game: 170, site: 90 }; // ticks of ~38ms after typing ends
         const step=t=>{
-            if (visible && t-last>38){ last=t;
-                if (n<total){ n++; render(n); hold=0; }
-                else if (++hold>70){ n=0; render(0); }
+            const dt = Math.min(0.05, (t-prevT)/1000 || 0); prevT=t;
+            if (visible && t-last>(DEMOS[demo].mode==="game" ? 16 : 24)){ last=t;
+                const D = DEMOS[demo];
+                if (n<D.total){ n++; render(n); hold=0; }
+                else if (++hold>HOLD[D.mode]){ n=0; startDemo((demo+1)%DEMOS.length); render(0); }
             }
+            if (visible && DEMOS[demo].mode==="game") drawGame(dt);
             requestAnimationFrame(step);
         };
-        render(0); requestAnimationFrame(step);
+        startDemo(0); render(0); requestAnimationFrame(step);
     }
     if (reduce) return;
     root.classList.add("is-story");
