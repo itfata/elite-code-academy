@@ -85,20 +85,20 @@ const content = {
             },
             python: {
                 eyebrow: "Python Foundations",
-                title: "Від першого рядка коду до власних Python-проєктів.",
-                lead: "Курс показує, як працює логіка програмування, і допомагає дійти до фінальної мінігри або власного невеликого застосунку.",
+                title: "Від першого рядка до робочого Python-проєкту — разом із ШІ.",
+                lead: "Ти вчишся не заучувати синтаксис, а ставити задачу ШІ, читати його код і розуміти, чому він працює. Фінал — власна мінігра або невеликий застосунок.",
                 format: "Self-Study або Full Support",
-                forWhom: "Для тих, хто хоче зрозуміти основи програмування, навчитися мислити логікою коду і створити свій перший Python-проєкт.",
-                learn: "Змінні, типи даних, умови, цикли, списки, словники, функції, модулі, базову структуру реального коду, а також що таке CRM-системи, GitHub і як з ними працювати.",
+                forWhom: "Для тих, хто хоче не просто отримати код від ШІ, а розуміти його: мислити логікою, перевіряти результат і створити свій перший Python-проєкт.",
+                learn: "Основи Python: змінні, умови, цикли, списки, словники, функції та модулі. Як писати код разом із ШІ, читати й перевіряти його. Основи API, GitHub і що таке CRM-системи.",
                 build: "Фінальний проєкт на Python на базі пройдених тем: власна мінігра або невеликий застосунок."
             },
             frontend: {
                 eyebrow: "Frontend Foundations",
-                title: "Від структури HTML до адаптивного сайту.",
-                lead: "Курс дає базу для створення перших вебсторінок і допомагає зрозуміти, як з нуля збирати чистий, читабельний інтерфейс.",
+                title: "Від структури HTML до робочого сайту — разом із ШІ.",
+                lead: "Ти збираєш сайт разом із ШІ й розумієш кожен блок: що написано, навіщо і як це змінити самостійно.",
                 format: "Basic або Pro Support",
-                forWhom: "Для тих, хто хоче розібратися, як влаштовані сайти, і навчитися створювати власні адаптивні сторінки без досвіду.",
-                learn: "Структуру HTML, стилізацію через CSS, роботу з текстом, зображеннями, формами, адаптивним layout через Flexbox, а також що таке CRM-системи, GitHub і як з ними працювати.",
+                forWhom: "Для тих, хто хоче зробити власний сайт із ШІ й не залежати від нього: розуміти структуру, стилі та форми без попереднього досвіду.",
+                learn: "Структуру HTML, стилі CSS, адаптивний layout через Flexbox, форми. Як створювати сторінки разом із ШІ та перевіряти його код. Як опублікувати сайт через GitHub і передати заявки з форми в CRM.",
                 build: "Перший професійний адаптивний сайт як фінальний проєкт і основу для власного портфоліо."
             },
             shared: {
@@ -304,20 +304,20 @@ const content = {
             },
             python: {
                 eyebrow: "Python Foundations",
-                title: "From your first line of code to your own Python projects.",
-                lead: "This course shows how programming logic works and helps you reach a final mini-game or your own small application.",
+                title: "From your first line to a working Python project, together with AI.",
+                lead: "You learn to brief AI, read its code and understand why it works, instead of memorising syntax. The course ends with your own mini-game or small application.",
                 format: "Self-Study or Full Support",
                 forWhom: "For those who want to understand programming basics, learn to think in code logic, and create a first Python project.",
-                learn: "Variables, data types, conditions, loops, lists, dictionaries, functions, modules, the basic structure of real code, plus what CRM systems and GitHub are and how to work with them.",
+                learn: "Python basics: variables, conditions, loops, lists, dictionaries, functions and modules. How to write code with AI, then read and check it. API basics, GitHub and what CRM systems are.",
                 build: "A final Python project based on the topics covered. On the current site this is described as creating your own mini-game."
             },
             frontend: {
                 eyebrow: "Frontend Foundations",
-                title: "From HTML structure to a responsive website.",
-                lead: "This course gives you the base for creating first web pages and understanding how to build a clean, readable interface from scratch.",
+                title: "From HTML structure to a working website, together with AI.",
+                lead: "You build a website with AI and understand every block: what is written, why, and how to change it yourself.",
                 format: "Basic or Pro Support",
                 forWhom: "For those who want to understand how websites work and learn to build their own responsive pages without prior experience.",
-                learn: "HTML structure, styling with CSS, working with text, images, forms, responsive layout with Flexbox, plus what CRM systems and GitHub are and how to work with them.",
+                learn: "HTML structure, CSS styling, responsive layout with Flexbox, forms. How to build pages with AI and check its code. How to publish a site through GitHub and send form enquiries to a CRM.",
                 build: "Your first professional responsive website as a final project and a base for your own portfolio."
             },
             shared: {
@@ -662,7 +662,9 @@ const curriculum = {
             ["03", "Умови та цикли", "If/Else, For, While та логіка ухвалення рішень у коді."],
             ["04", "Списки та словники", "Організація даних та базові структури для реальних задач."],
             ["05", "Функції та модулі", "Повторне використання коду і більш структурований підхід."],
-            ["06", "Фінальний проєкт", "Створення власної мінігри: від ідеї до робочого файлу."]
+            ["06", "Код разом із ШІ", "Як поставити задачу ШІ, прочитати його код, знайти й виправити помилки."],
+            ["07", "API та GitHub", "Як програма отримує дані з інших сервісів і де зберігати свій код."],
+            ["08", "Фінальний проєкт", "Створення власної мінігри: від ідеї до робочого файлу."]
         ],
         en: [
             ["01", "First steps", "Installing Python and getting familiar with VS Code and PyCharm."],
@@ -670,7 +672,9 @@ const curriculum = {
             ["03", "Conditions and loops", "If/Else, For, While, and decision making in code."],
             ["04", "Lists and dictionaries", "Organizing data and using basic structures for real tasks."],
             ["05", "Functions and modules", "Reusing code and working in a more structured way."],
-            ["06", "Final project", "Creating your own mini-game from idea to working file."]
+            ["06", "Coding with AI", "How to brief AI, read its code, and find and fix mistakes."],
+            ["07", "APIs and GitHub", "How a program gets data from other services and where to keep your code."],
+            ["08", "Final project", "Creating your own mini-game from idea to working file."]
         ]
     },
     frontend: {
@@ -679,14 +683,18 @@ const curriculum = {
             ["02", "Магія стилів CSS", "Селектори, кольори, шрифти та оформлення блоків."],
             ["03", "Flexbox Layout", "Сучасне розташування елементів і побудова сіток."],
             ["04", "Форми та інтерактив", "Поля вводу, кнопки та збір даних від користувача."],
-            ["05", "Фінальний проєкт", "Верстка першого професійного адаптивного сайту."]
+            ["05", "ШІ у веброзробці", "Як збирати сторінки разом із ШІ та перевіряти, що він написав."],
+            ["06", "Сайт у мережі та CRM", "Публікація через GitHub і передача заявок із форми в CRM."],
+            ["07", "Фінальний проєкт", "Верстка першого професійного адаптивного сайту."]
         ],
         en: [
             ["01", "Site anatomy", "HTML structure and working with text, links, and images."],
             ["02", "CSS style magic", "Selectors, colors, fonts, and visual styling."],
             ["03", "Flexbox layout", "Modern positioning and building responsive layouts."],
             ["04", "Forms and interaction", "Inputs, buttons, and collecting user data."],
-            ["05", "Final project", "Building your first professional responsive website."]
+            ["05", "AI in web development", "How to build pages with AI and check what it wrote."],
+            ["06", "Going live and CRM", "Publishing through GitHub and sending form enquiries to a CRM."],
+            ["07", "Final project", "Building your first professional responsive website."]
         ]
     }
 };
