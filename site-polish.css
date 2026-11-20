@@ -1,0 +1,29 @@
+/* Elite Code Academy — елегантні цифри та підпис засновниці на всіх сторінках (2026-11-20).
+   Підключається після premium.css. */
+
+/* ---------- цифри: золотий курсив Instrument Serif ---------- */
+.course-summary-card .summary-item strong,
+.course-summary-price strong,
+.price-value,
+.price-regular,
+.curriculum-index,
+.student-meta span,
+.journey-step {
+    font-family: var(--font-serif) !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.005em !important;
+    font-variant-numeric: lining-nums;
+}
+.course-summary-card .summary-item strong { font-size: 1.45rem !important; color: var(--text); }
+.course-summary-price strong { font-size: 2rem !important; color: var(--accent) !important; }
+.price-value { font-size: clamp(2.6rem, 4vw, 3.1rem) !important; line-height: 1 !important; color: var(--text); }
+.pricing-card.is-recommended .price-value, .price-card.is-recommended .price-value, .is-popular .price-value { color: var(--accent) !important; }
+.price-regular { font-size: 1.05rem !important; color: var(--soft) !important; }
+.curriculum-index { font-size: 1.7rem !important; color: var(--accent) !important; line-height: 1 !important; }
+.student-meta span { font-size: 1.15rem !important; color: var(--accent) !important; }
+.journey-step { font-size: 2rem !important; color: var(--accent) !important; line-height: 1 !important; text-transform: none !important; letter-spacing: 0 !important; }
+
+/* ---------- підпис засновниці (справжній, векторний, золотий) ---------- */
+.eca-sig { display: block; width: clamp(140px, 15vw, 190px); height: auto; margin: 1.6rem 0 0.2rem; filter: drop-shadow(0 0 14px rgba(212, 175, 95, 0.22)); }
+.founder-story-block .eca-sig { margin-top: 1.4rem; }
