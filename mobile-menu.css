@@ -1,0 +1,64 @@
+/* Elite Code Academy — мобільне меню «рідке золото» (2026-11-21).
+   Працює тільки на екранах до 920px. Підключається після premium.css. */
+@media (max-width: 920px) {
+    /* кнопка-бургер замість «+» */
+    .nav-toggle.eca-burger {
+        position: relative; display: grid !important; place-items: center; width: 44px !important; height: 44px !important;
+        border-radius: 50% !important; border: 1px solid rgba(245, 243, 238, 0.16) !important; background: rgba(245, 243, 238, 0.03) !important;
+        font-size: 0 !important; color: transparent !important; cursor: pointer; padding: 0 !important;
+        transition: border-color 0.4s, background 0.4s;
+    }
+    .eca-burger span { position: absolute; left: 50%; top: 50%; width: 17px; height: 1.5px; margin-left: -8.5px; border-radius: 2px; background: #f5f3ee; transition: transform 0.55s cubic-bezier(0.7, 0, 0.2, 1), background 0.4s, width 0.4s; }
+    .eca-burger span:nth-child(1) { transform: translateY(-4px); }
+    .eca-burger span:nth-child(2) { transform: translateY(4px); width: 11px; margin-left: -2.5px; }
+    .eca-burger:focus-visible { outline: 2px solid #d4af5f; outline-offset: 3px; }
+
+    /* стан «відкрито» */
+    body.eca-mm-open { overflow: hidden; }
+    body.eca-mm-open .site-shell { z-index: auto !important; }
+    body.eca-mm-open .site-nav { z-index: 10001 !important; }
+    body.eca-mm-open .site-nav-shell { background: transparent !important; border-color: transparent !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+    body.eca-mm-open .site-nav-shell .nav-links, body.eca-mm-open .site-nav-shell .nav-actions { display: none !important; }
+    body.eca-mm-open .brand strong, body.eca-mm-open .brand span { color: #120e07 !important; transition: color 0.4s 0.15s; }
+    body.eca-mm-open .brand img { filter: brightness(0) saturate(0); opacity: 0.85; transition: filter 0.4s 0.15s; }
+    body.eca-mm-open .eca-burger { border-color: rgba(18, 14, 7, 0.25) !important; background: rgba(18, 14, 7, 0.06) !important; }
+    body.eca-mm-open .eca-burger span { background: #120e07; }
+    body.eca-mm-open .eca-burger span:nth-child(1) { transform: rotate(45deg); }
+    body.eca-mm-open .eca-burger span:nth-child(2) { transform: rotate(-45deg); width: 17px; margin-left: -8.5px; }
+}
+
+.eca-mm { position: fixed; inset: 0; z-index: 10000; pointer-events: none; visibility: hidden; }
+.eca-mm.is-active { visibility: visible; }
+.eca-mm.is-open { pointer-events: auto; }
+.eca-mm__liquid { position: absolute; inset: 0; overflow: hidden; }
+.eca-mm__blob {
+    position: absolute; border-radius: 50%; transform: scale(0.0001); will-change: transform; filter: url(#eca-mm-water);
+    background: radial-gradient(circle at 35% 30%, #f3dc9f 0%, #ddb867 38%, #c99b46 70%, #b8893a 100%);
+}
+.eca-mm__panel {
+    position: absolute; inset: 0; display: flex; flex-direction: column; color: #120e07;
+    padding: calc(110px + env(safe-area-inset-top, 0px)) max(30px, env(safe-area-inset-right, 0px)) calc(30px + env(safe-area-inset-bottom, 0px)) max(30px, env(safe-area-inset-left, 0px));
+    overflow-y: auto;
+}
+.eca-mm__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.eca-mm__list li { overflow: hidden; }
+.eca-mm__item {
+    display: flex; align-items: baseline; gap: 16px; padding: 6px 0; text-decoration: none; color: #120e07 !important;
+    font: 500 clamp(2.1rem, 10vw, 2.7rem)/1.12 var(--font-main, "Inter Tight", sans-serif); letter-spacing: -0.04em;
+    transform: translateY(110%); transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.eca-mm__item i { font-family: var(--font-serif, "Instrument Serif", serif); font-style: italic; font-weight: 400; font-size: 1.25rem; letter-spacing: 0; color: rgba(18, 14, 7, 0.5); min-width: 30px; }
+.eca-mm__item.is-current { font-family: var(--font-serif, "Instrument Serif", serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.eca-mm__item:focus-visible { outline: 2px solid #120e07; outline-offset: 4px; border-radius: 6px; }
+.eca-mm.is-open .eca-mm__item { transform: none; }
+.eca-mm__foot { margin-top: auto; padding-top: 28px; display: grid; gap: 14px; opacity: 0; transform: translateY(14px); transition: opacity 0.5s 0.8s, transform 0.6s 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.eca-mm.is-open .eca-mm__foot { opacity: 1; transform: none; }
+.eca-mm__cta { display: flex; justify-content: center; padding: 17px; border-radius: 999px; background: #120e07; color: #f3dc9f !important; text-decoration: none; font: 500 1rem/1 var(--font-main, sans-serif); }
+.eca-mm__login { display: flex; justify-content: center; padding: 15px; border-radius: 999px; border: 1px solid rgba(18, 14, 7, 0.3); color: #120e07 !important; text-decoration: none; font: 500 0.95rem/1 var(--font-main, sans-serif); }
+.eca-mm__contacts { display: flex; justify-content: space-between; gap: 1rem; padding-top: 14px; border-top: 1px solid rgba(18, 14, 7, 0.15); font-size: 0.8rem; }
+.eca-mm__contacts a { color: rgba(18, 14, 7, 0.7) !important; text-decoration: none; }
+.eca-mm__cta:focus-visible, .eca-mm__login:focus-visible, .eca-mm__contacts a:focus-visible { outline: 2px solid #120e07; outline-offset: 3px; }
+.eca-mm.is-closing .eca-mm__item { transition-duration: 0.35s; transition-timing-function: cubic-bezier(0.7, 0, 0.8, 0.2); }
+.eca-mm.is-closing .eca-mm__foot { transition-delay: 0s; transition-duration: 0.25s; }
+@media (prefers-reduced-motion: reduce) { .eca-mm__item, .eca-mm__foot, .eca-burger span { transition: none !important; } }
+@media (min-width: 921px) { .eca-mm { display: none !important; } }
